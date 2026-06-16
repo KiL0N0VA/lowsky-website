@@ -194,7 +194,7 @@ body {
    grid-template-areas:
        "area1 area2 area3"
        "area4 area4 area4";
-   border: 5px solid #00FE2A;
+   border: 0px solid #00FE2A;
    overflow: hidden;
 }
 
