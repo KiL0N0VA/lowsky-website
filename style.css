@@ -39,8 +39,8 @@ body {
         minmax(720px, 1fr)
         minmax(30px, 180px);
     align-items: stretch;
-    padding-top: 20px;
-    position: relative;
+    padding-top: 30px;
+    position: centered;
     z-index: 10;
 }
 
@@ -51,13 +51,10 @@ body {
     align-self: start;
     z-index: 20;
 }
-
-
 .nav-logo {
     width: clamp(32px, 2.4vw, 52px);
     height: auto;
 }
-
 
 /* ===================== NAV TABLE ===================== */
 .nav-table {
@@ -65,7 +62,7 @@ body {
     display: grid;
     grid-template-columns:
         auto
-        repeat(6, minmax(50px, 1fr))
+        repeat(11, minmax(50px, 1fr))
         auto;
     min-width: 0;
     width: 100%;
@@ -173,7 +170,7 @@ body {
     opacity: 0.85;
 }
 
-/* ===================== COLLISION HANDLING ===================== */
+/* ===================== COLLISION HANDLING 
 @media (max-width: 1050px) {
     .page-nav {
         grid-template-columns: 100px 1fr 100px;
@@ -189,7 +186,7 @@ body {
         letter-spacing: 0.1em;
     }
 }
-
+===================== */
 @media (max-width: 760px) {
     .nav-table {
         display: none;
@@ -214,7 +211,7 @@ body {
    grid-template-areas:
        "area1 area2 area3"
        "area4 area4 area4";
-   border: 5px solid #00FE2A;
+   border: 0px solid #00FE2A;
    overflow: hidden;
 }
 
@@ -260,7 +257,7 @@ body {
 .area {
    position: relative;
    z-index: 3;
-   border: 5px solid #00FE2A;
+   border: 0px solid #00FE2A;
    color: #00FE2A;
    display: flex;
    align-items: center;
