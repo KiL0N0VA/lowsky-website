@@ -21,21 +21,24 @@ body {
 /* ===================== PAGE NAVIGATION ===================== */
 .page-nav {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns:
+        clamp(80px, 8vw, 140px)
+        1fr
+        clamp(80px, 8vw, 140px);
+    align-items: start;
+    padding-top: 20px;
     position: relative;
-    padding-top: 38px;
     z-index: 10;
 }
 
 /* ===================== LOGO ===================== */
 .nav-logo-link {
-    position: absolute;
-    left: 4vw;
+    grid-column: 1;
     display: flex;
-    align-items: center;
-    z-index: 20;
+    justify-self: center;
+    align-self: start;
+
 }
 
 
@@ -47,12 +50,15 @@ body {
 
 /* ===================== NAV TABLE ===================== */
 .nav-table {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    gap: clamp(12px, 2vw, 40px);
+    grid-column: 2;
+    
+    display: grid;
+    grid-template-columns:
+        auto
+        repeat(6, minmax(130px, 1fr))
+        auto;
+
+    align-items: start;
 
     font-family: 'digital-7', monospace;
     font-size: clamp(20px, 1.3vw, 30px);
@@ -63,11 +69,12 @@ body {
 
 /* ===================== NAV ITEMS ===================== */
 .nav-item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
-    justify-content: flex-start;
-    min-width: 90px;
+    justify-items: center;
+
+    width: 100%;
 
     color: #E95133;
     text-decoration: none;
@@ -77,16 +84,20 @@ body {
         transform 0.2s ease;
 }
 
-.nav-letter {
-    line-height: 1;
+.nav-letter,
+.nav-label {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .nav-label {
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 0.55rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     opacity: 0.65;
+    line-height: 1;
 }
 
 .nav-item:hover,
@@ -103,8 +114,13 @@ body {
 }
 
 .nav-border-left,
-.nav-border-right {color: #E95133;}
-.nav-dot {color: #8B240F;}
+.nav-border-right,
+.nav-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E95133;
+}
 
 .nav-border-left,
 .nav-border-right {
@@ -115,8 +131,11 @@ body {
 
 /* ===================== HAMBURGER MENU ===================== */
 .hamburger-menu {
-    position: absolute;
-    right: 4vw;
+    grid-column: 3;
+    display: flex;
+    justify-self: center;
+    align-self: start;
+
     background: none;
     border: none;
     color: #00DEFF;
