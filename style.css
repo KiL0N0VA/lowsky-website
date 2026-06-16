@@ -133,7 +133,7 @@ body {
     background: none;
     border: none;
 
-    color: #5DD5FF;
+    color: #00DEFF;
 
     font-size: clamp(26px, 2.2vw, 48px);
 
@@ -160,7 +160,7 @@ body {
     width: min(92vw, 1700px);
     height: calc(100vh - 120px);
 
-    margin: 0 auto;
+    margin: 20 auto;
 
     display: grid;
 
