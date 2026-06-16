@@ -98,7 +98,7 @@ body {
 .nav-item:hover,
 .nav-item.active {
 
-    color: #5DD5FF;
+    color: #00DEFF;
 
     text-shadow:
         0 0 8px rgba(93,213,255,0.7);
