@@ -5,6 +5,19 @@
     box-sizing: border-box;
 }
 
+/* ===================== GLOBAL VARIABLES =====================
+	** best practice is to use the default font size of the user's device
+	vw: Viewport Width (percentage of browser width, ex: 1vw = 1% of width)
+	vh: Viewport Height (percentage of browser height, ex: 1vh = 1% of height)
+	rem: Root em (font size of the root element of the document)
+
+	** previous variables used for sizing:
+	em: Electronic Measure (relative units to a selected font size, ex: 2in font, 1em = 2in)
+	ex: Electronic X-height (relative units to the height of a font's lowercase letters)
+	px: Pixel (relative pixel units dependant on type of device being used, CSS 1px = 1/96th of an inch)
+	pt: Point (inherited from typography, represented in physical units: cm, mm, in, etc.)
+	pc: Pica (inherited from typography, represented in physical units: cm, mm, in, etc.)
+*/
 
 /* ===================== PAGE BACKGROUND ===================== */
 body {
@@ -23,10 +36,10 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns:
-        minmax(120px, 180px)
+        minmax(30px, 180px)
         minmax(720px, 1fr)
-        minmax(120px, 180px);
-    align-items: start;
+        minmax(30px, 180px);
+    align-items: stretch;
     padding-top: 20px;
     position: relative;
     z-index: 10;
@@ -54,7 +67,7 @@ body {
     display: grid;
     grid-template-columns:
         auto
-        repeat(6, minmax(100px, 1fr))
+        repeat(6, minmax(50px, 1fr))
         auto;
     min-width: 0;
     width: 100%
@@ -76,6 +89,7 @@ body {
     justify-items: center;
 
     width: 100%;
+    min-width: 0;
 
     color: #E95133;
     text-decoration: none;
@@ -94,8 +108,15 @@ body {
 
 .nav-label {
     margin-top: 5px;
+    width: 100%;
+    min-width: 0;
+
+    text-align: center;
+    overflow: hidden;
+
     font-size: 0.55rem;
     letter-spacing: 0.18em;
+
     text-transform: uppercase;
     opacity: 0.65;
     line-height: 1;
@@ -194,7 +215,7 @@ body {
    grid-template-areas:
        "area1 area2 area3"
        "area4 area4 area4";
-   border: 0px solid #00FE2A;
+   border: 5px solid #00FE2A;
    overflow: hidden;
 }
 
