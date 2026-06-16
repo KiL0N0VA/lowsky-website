@@ -238,19 +238,19 @@ body {
 .page-index .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-asteroid_t-50.png?raw=true");
 }
 
-.page-operations .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-sandstorm_t-50.png?raw=true");
+.page-operations .image-overlay {background-image: url("img_s-asteroid_t-50.png");
 }
 
-.page-wardens .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-crystals_t-50.png?raw=true");
+.page-wardens .image-overlay {background-image: url("img_s-sandstorm_t-50.png");
 }
 
-.page-simulation .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-clouds_t-50.png?raw=true");
+.page-simulation .image-overlay {background-image: url("img_s-clouds_t-50.png");
 }
 
-.page-kernels .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-mountains_t-50.png?raw=true");
+.page-kernels .image-overlay {background-image: url("img_s-crystals_t-50.png");
 }
 
-.page-yottabytes .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-nebula_t-50.png?raw=true");
+.page-yottabytes .image-overlay {background-image: url("img_s-nebula_t-50.png");
 }
 
 
