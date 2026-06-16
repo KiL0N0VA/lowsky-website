@@ -1,11 +1,12 @@
-/* ======= GLOBAL RESET ======= */
+/* ===================== GLOBAL RESET ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ======= PAGE BACKGROUND ======= */
+
+/* ===================== PAGE BACKGROUND ===================== */
 body {
     min-height: 100vh;
     background: linear-gradient(
@@ -16,7 +17,8 @@ body {
     overflow-x: hidden;
 }
 
-/* ======= PAGE NAVIGATION ======= */
+
+/* ===================== PAGE NAVIGATION ===================== */
 .page-nav {
     width: 100%;
     display: flex;
@@ -27,7 +29,8 @@ body {
     z-index: 10;
 }
 
-/* ======= LOGO ======= */
+
+/* ===================== LOGO ===================== */
 .nav-logo {
     position: absolute;
     left: 4vw;
@@ -35,7 +38,8 @@ body {
     height: auto;
 }
 
-/* ======= NAVIGATION TABLE ======= */
+
+/* ===================== NAV TABLE ===================== */
 .nav-table {
     display: flex;
     align-items: center;
@@ -48,7 +52,8 @@ body {
     color: #E95133;
 }
 
-/* ======= NAVIGATION ITEMS ======= */
+
+/* ===================== NAV ITEMS ===================== */
 .nav-item {
     color: #E95133;
     text-decoration: none;
@@ -76,7 +81,8 @@ body {
     line-height: 1;
 }
 
-/* ======= HAMBURGER MENU ======= */
+
+/* ===================== HAMBURGER MENU ===================== */
 .hamburger-menu {
     position: absolute;
     right: 4vw;
@@ -96,39 +102,87 @@ body {
     opacity: 0.85;
 }
 
-/* ======= MAIN PAGE ======= */
+
+/* ===================== MAIN PAGE ===================== */
 .page-frame{
-    width: min(92vw, 1700px);
-    height: calc(100vh - 120px);
+   position: relative;	
+   width: min(92vw, 1700px);
+   height: calc(100vh - 120px);
 
-    margin: 20 auto;
-    display: grid;
-    grid-template-columns:
-        minmax(140px, 15%)
-        1fr
-        minmax(140px, 15%);
-    grid-template-rows:
-        1fr
-        minmax(24px, 10%);
-    grid-template-areas:
-        "area1 area2 area3"
-        "area4 area4 area4";
-    border: 1px solid #00FE2A;
+   margin: 20 auto;
+   display: grid;
+   grid-template-columns:
+       minmax(140px, 15%)
+       1fr
+       minmax(140px, 15%);
+   grid-template-rows:
+       1fr
+       minmax(24px, 10%);
+   grid-template-areas:
+       "area1 area2 area3"
+       "area4 area4 area4";
+   border: 5px solid #00FE2A;
+   overflow: hidden;
 }
 
-/* ======= PAGE AREA======= */
+
+/* ===================== IMAGE OVERLAY ===================== */
+.image-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100 %;
+   height: 90%;
+   
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+
+   z-index: 2;
+   pointer-events: none;
+}
+
+
+/* ===================== PAGE-SPECIFIC IMAGES ===================== */
+.page-index .image-overlay {background-image: url(" blah");
+}
+
+.page-operations .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-asteroid_t-50.png?raw=true");
+}
+
+.page-wardens .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-sandstorm_t-50.png?raw=true");
+}
+
+.page-simulation .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-clouds_t-50.png?raw=true");
+}
+
+.page-kernels .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-crystals_t-50.png?raw=true");
+}
+
+.page-yottabytes .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-nebula_t-50.png?raw=true");
+}
+
+
+/* ===================== PAGE AREA ===================== */
 .area {
-    border: 1px solid #00FE2A;
-    color: #00FE2A;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   position: relative;
+   z-index: 3;
+   border: 5px solid #00FE2A;
+   color: #00FE2A;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
-.area-1 {grid-area: area1;}
+.area-1 {grid-area: area1;
+}
 
-.area-2 {grid-area: area2;}
+.area-2 {grid-area: area2;
+}
 
-.area-3 {grid-area: area3;}
+.area-3 {grid-area: area3;
+}
 
-.area-4 {grid-area: area4;}
+.area-4 {grid-area: area4;
+}
+
