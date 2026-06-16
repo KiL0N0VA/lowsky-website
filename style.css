@@ -29,11 +29,16 @@ body {
     z-index: 10;
 }
 
-
 /* ===================== LOGO ===================== */
-.nav-logo {
+.nav-logo-link {
     position: absolute;
     left: 4vw;
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-logo {
     width: clamp(32px, 2.4vw, 52px);
     height: auto;
 }
@@ -42,10 +47,12 @@ body {
 /* ===================== NAV TABLE ===================== */
 .nav-table {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: nowrap;
-    gap: clamp(10px, 1.8vw, 42px);
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 40px);
+
     font-family: 'digital-7', monospace;
     font-size: clamp(20px, 1.3vw, 30px);
     letter-spacing: 0.28em;
@@ -55,6 +62,12 @@ body {
 
 /* ===================== NAV ITEMS ===================== */
 .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 90px;
+
     color: #E95133;
     text-decoration: none;
     transition:
@@ -63,12 +76,29 @@ body {
         transform 0.2s ease;
 }
 
+.nav-letter {
+    line-height: 1;
+}
+
+.nav-label {
+    margin-top: 10px;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.65;
+}
+
 .nav-item:hover,
 .nav-item.active {
     color: #00DEFF;
     text-shadow:
         0 0 8px rgba(93,213,255,0.7);
     transform: translateY(-1px);
+}
+
+.nav-item:hover .nav-label,
+.nav-item.active .nav-label {
+    opacity: 1;
 }
 
 .nav-border-left,
@@ -131,7 +161,7 @@ body {
    position: absolute;
    top: 0;
    left: 0;
-   width: 100 %;
+   width: 100%;
    height: 90%;
    
    background-size: cover;
@@ -144,19 +174,19 @@ body {
 
 
 /* ===================== PAGE-SPECIFIC IMAGES ===================== */
-.page-index .image-overlay {background-image: url(" blah");
+.page-index .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-asteroid_t-50.png?raw=true");
 }
 
-.page-operations .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-asteroid_t-50.png?raw=true");
+.page-operations .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-sandstorm_t-50.png?raw=true");
 }
 
-.page-wardens .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-sandstorm_t-50.png?raw=true");
+.page-wardens .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-crystals_t-50.png?raw=true");
 }
 
 .page-simulation .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-clouds_t-50.png?raw=true");
 }
 
-.page-kernels .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-crystals_t-50.png?raw=true");
+.page-kernels .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-mountains_t-50.png?raw=true");
 }
 
 .page-yottabytes .image-overlay {background-image: url("https://github.com/KiL0N0VA/lowsky-website/blob/main/img_s-nebula_t-50.png?raw=true");
@@ -185,4 +215,3 @@ body {
 
 .area-4 {grid-area: area4;
 }
-
