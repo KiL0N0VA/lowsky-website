@@ -109,7 +109,7 @@ body {
    width: min(92vw, 1700px);
    height: calc(100vh - 120px);
 
-   margin: 20 auto;
+   margin: 20px auto;
    display: grid;
    grid-template-columns:
        minmax(140px, 15%)
