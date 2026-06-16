@@ -1,0 +1,210 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   PAGE BACKGROUND
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        to bottom,
+        #380E06 0%,
+        #001218 100%
+    );
+
+    overflow-x: hidden;
+}
+/* =========================================
+   PAGE NAVIGATION TABLE
+========================================= */
+
+.page-nav {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding-top: 38px;
+
+    z-index: 10;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.nav-logo {
+
+    position: absolute;
+    left: 4vw;
+
+    width: clamp(32px, 2.4vw, 52px);
+    height: auto;
+}
+
+/* =========================================
+   NAVIGATION TABLE
+========================================= */
+
+.nav-table {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: nowrap;
+
+    gap: clamp(10px, 1.8vw, 42px);
+
+    font-family: 'digital-7', monospace;
+
+    font-size: clamp(20px, 1.3vw, 30px);
+
+    letter-spacing: 0.28em;
+
+    color: #E95133;
+}
+
+/* =========================================
+   NAV ITEMS
+========================================= */
+
+.nav-item {
+
+    color: #E95133;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+
+    color: #5DD5FF;
+
+    text-shadow:
+        0 0 8px rgba(93,213,255,0.7);
+
+    transform: translateY(-1px);
+}
+
+.nav-border-left,
+.nav-border-right {color: #E95133;
+}
+
+.nav-dot {color: #8B240F;
+}
+
+.nav-border-left,
+.nav-border-right {
+
+    font-size: clamp(24px, 1.8vw, 42px);
+
+    line-height: 1;
+}
+
+/* =========================================
+   HAMBURGER MENU
+========================================= */
+
+.hamburger-menu {
+
+    position: absolute;
+    right: 4vw;
+
+    background: none;
+    border: none;
+
+    color: #5DD5FF;
+
+    font-size: clamp(26px, 2.2vw, 48px);
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.hamburger-menu:hover {
+
+    transform: scale(1.08);
+
+    opacity: 0.85;
+}
+/* =========================================
+   MAIN PAGE FRAME
+========================================= */
+
+.page-frame {
+    width: min(92vw, 1700px);
+    height: calc(100vh - 120px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(140px, 15%)
+        1fr
+        minmax(140px, 15%);
+
+    grid-template-rows:
+        1fr
+        minmax(24px, 10%);
+
+    grid-template-areas:
+        "area1 area2 area3"
+        "area4 area4 area4";
+
+    border: 1px solid #00FE2A;
+}
+
+/* =========================================
+   PAGE AREAS
+========================================= */
+
+.area {
+    border: 1px solid #00FE2A;
+    color: #00FE2A;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area-1 {
+    grid-area: area1;
+}
+
+.area-2 {
+    grid-area: area2;
+}
+
+.area-3 {
+    grid-area: area3;
+}
+
+.area-4 {
+    grid-area: area4;
+}
