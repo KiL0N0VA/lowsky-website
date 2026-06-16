@@ -39,7 +39,10 @@ body {
         minmax(720px, 1fr)
         minmax(30px, 180px);
     align-items: stretch;
-    padding-top: 30px;
+    padding-top: 5vh;
+	padding-right: 5vw;
+	padding-left: 5vw;
+
     position: centered;
     z-index: 10;
 }
@@ -70,7 +73,7 @@ body {
     align-items: start;
 
     font-family: 'digital-7', monospace;
-    font-size: clamp(12px, 1.3vw, 30px);
+    font-size: clamp(12px, 1.3vw, 72px);
     letter-spacing: 0.28em;
     color: #E95133;
 }
@@ -98,11 +101,9 @@ body {
 .nav-label {
     text-align: center;
     width: 100%;
-    margin-bottom: 5px;
 }
 
 .nav-label {
-    margin-top: 5px;
     width: 100%;
     min-width: 0;
 
@@ -110,7 +111,7 @@ body {
 	white-space: nowrap;
     overflow: hidden;
 
-    font-size: 0.55rem;
+    font-size: 0.80rem;
     letter-spacing: 0.18em;
 
     text-transform: uppercase;
