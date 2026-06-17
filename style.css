@@ -271,7 +271,7 @@ body {
    justify-content: center;
 }
 
-.area-1 {grid-area: LEFT;
+.area-1 {grid-area: area1;
 }
 
 .area-2 {grid-area: area2;
