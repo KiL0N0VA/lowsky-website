@@ -50,9 +50,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     align-items: stretch;
-    padding-top: 5vh;
-	padding-right: 5vw;
-	padding-left: 5vw;
+    padding-top: 2vh;
+	padding-right: 2vw;
+	padding-left: 2vw;
 
     position: centered;
     z-index: 20;
@@ -93,7 +93,7 @@ body {
 /* ===================== NAV ITEMS ===================== */
 .nav-item {
     display: grid;
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: 5fr 1fr;
     align-items: center;
     justify-items: center;
 
