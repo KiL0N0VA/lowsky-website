@@ -46,7 +46,7 @@ body {
 /* ===================== PAGE NAVIGATION ===================== */
 .page-nav {
     width: 100%;
-	min-height: 10vh;
+	height: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     align-items: stretch;
