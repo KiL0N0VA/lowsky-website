@@ -78,13 +78,12 @@ body {
 	align-self: center;
 	
     display: grid;
-	border: 20px solid #00FE2A;
     place-items: center;
     width: 100%;
 	
     grid-template-columns:
         auto
-        repeat(8, minmax(32px, 1fr))
+        repeat(6, minmax(32px, 1fr))
         auto;
 
     font-family: 'digital-7', monospace;
