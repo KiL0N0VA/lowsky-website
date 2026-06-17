@@ -43,12 +43,13 @@ body {
     overflow-x: hidden;
 }
 
-/* ===================== PAGE NAVIGATION ===================== */
+/* ========================================== SECTION 1: ========================================== */
+/* ===================== NAVIGATION BAR ===================== */
 .page-nav {
     width: 100%;
 	height: 100%;
     display: grid;
-    grid-template-columns: 1fr /*5fr 1fr;*/
+    grid-template-columns: 1fr 5fr 1fr;
 	align-items: center;
 	align-self: center;
     justify-self: center;
