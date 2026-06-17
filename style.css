@@ -282,3 +282,10 @@ body {
 
 .area-4 {grid-area: area4;
 }
+
+/* ===================== FOOTER ===================== */
+.page-footer {
+    color: #000000;
+	text-align: center;
+	padding: 15px;
+}
