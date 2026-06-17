@@ -46,13 +46,10 @@ body {
 /* ===================== PAGE NAVIGATION ===================== */
 .page-nav {
     width: 100%;
-	min-height: 50vh;
+	min-height: 10vh;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     align-items: stretch;
-    padding-top: 2vh;
-	padding-right: 2vw;
-	padding-left: 2vw;
 
     position: centered;
     z-index: 20;
