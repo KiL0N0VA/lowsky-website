@@ -10,6 +10,20 @@
 	px: Pixel (relative pixel units dependant on type of device being used, CSS 1px = 1/96th of an inch)
 	pt: Point (inherited from typography, represented in physical units: cm, mm, in, etc.)
 	pc: Pica (inherited from typography, represented in physical units: cm, mm, in, etc.)
+
+	margin: space outside an element, separates elements from other elements (defined by margin)
+	border: space between the outter margin and the inner padding, customizable line or 'frame' that wraps the padding (defined by border)
+	padding: space inside an element, used to increase clickable/visible area without changing content size (defined by padding)
+	content: inner most area with text, images, etc. (defined by width & height)
+	box-sizing: used to include the padding & the border (defined by witdth & height)
+	z-index: controls the depth of elements, which elements appear in-front and which appear behind on another (top, 30, 20, 10, 0, bot)
+
+	** types of position for text, images, content, etc: (start, left, center, right, end, justify [distributed equally])
+	text-align: controls text alignment
+	align-items: aligns items (grid or flex) along the cross axis (vertical in a row)
+	justify-content: aligns items (grid or flex) along the main axis (horizontal in a row)
+	align-content: aligns multiple lines of flex/grid items along the cross axis
+
 */
 /* ===================== GLOBAL RESET ===================== */
 * {
@@ -29,22 +43,19 @@ body {
     overflow-x: hidden;
 }
 
-
 /* ===================== PAGE NAVIGATION ===================== */
 .page-nav {
     width: 100%;
+	min-height: 10vh;
     display: grid;
-    grid-template-columns:
-        minmax(30px, 180px)
-        minmax(720px, 1fr)
-        minmax(30px, 180px);
+    grid-template-columns: 1fr 5fr 1fr;
     align-items: stretch;
     padding-top: 5vh;
 	padding-right: 5vw;
 	padding-left: 5vw;
 
     position: centered;
-    z-index: 10;
+    z-index: 20;
 }
 
 /* ===================== LOGO ===================== */
@@ -52,7 +63,7 @@ body {
     grid-column: 1;
     justify-self: center;
     align-self: start;
-    z-index: 20;
+    z-index: 25;
 }
 .nav-logo {
     width: clamp(32px, 2.4vw, 52px);
@@ -67,13 +78,13 @@ body {
         auto
         repeat(11, minmax(50px, 1fr))
         auto;
-    min-width: 0;
+/*    min-width: 0;*/
     width: 100%;
 
     align-items: start;
 
     font-family: 'digital-7', monospace;
-    font-size: clamp(12px, 1.3vw, 72px);
+    font-size: clamp(20px, 1.3vw, 72px);
     letter-spacing: 0.28em;
     color: #E95133;
 }
@@ -82,7 +93,7 @@ body {
 /* ===================== NAV ITEMS ===================== */
 .nav-item {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
     align-items: center;
     justify-items: center;
 
@@ -111,7 +122,7 @@ body {
 	white-space: nowrap;
     overflow: hidden;
 
-    font-size: 0.80rem;
+    font-size: 0.90rem;
     letter-spacing: 0.18em;
 
     text-transform: uppercase;
@@ -124,7 +135,7 @@ body {
     color: #00DEFF;
     text-shadow:
         0 0 8px rgba(93,213,255,0.7);
-    transform: translateY(-1px);
+    transform: translateY(-10px);
 }
 
 .nav-item:hover .nav-label,
@@ -143,7 +154,8 @@ body {
 
 .nav-border-left,
 .nav-border-right {
-    font-size: clamp(24px, 1.8vw, 42px);
+    grid-row: 1 / span 2;
+	font-size: clamp(24px, 1.8vw, 42px);
     line-height: 1;
 }
 
@@ -153,7 +165,7 @@ body {
     grid-column: 3;
     justify-self: center;
     align-self: start;
-    z-index: 20;
+    z-index: 25;
 
     background: none;
     border: none;
@@ -197,15 +209,15 @@ body {
 /* ===================== MAIN PAGE ===================== */
 .page-frame {
    position: relative;	
-   width: min(92vw, 1700px);
+   width: min(100%, 1700px);
    height: calc(100vh - 120px);
 
-   margin: 20px auto;
+   margin: 10px auto;
    display: grid;
    grid-template-columns:
-       minmax(140px, 15%)
        1fr
-       minmax(140px, 15%);
+       5fr
+       1fr;
    grid-template-rows:
        1fr
        minmax(24px, 10%);
@@ -223,13 +235,13 @@ body {
    top: 0;
    left: 0;
    width: 100%;
-   height: 90%;
+   height: 100%;
    
    background-size: cover;
-   background-position: center;
+   background-position: center top;
    background-repeat: no-repeat;
 
-   z-index: 2;
+   z-index: 5;
    pointer-events: none;
 }
 
@@ -259,13 +271,13 @@ body {
    justify-content: center;
 }
 
-.area-1 {grid-area: area1;
+.area-1 {grid-area: LEFT;
 }
 
 .area-2 {grid-area: area2;
 }
 
-.area-3 {grid-area: area3;
+.area-3 {grid-area: RIGHT;
 }
 
 .area-4 {grid-area: area4;
