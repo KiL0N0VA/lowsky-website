@@ -284,6 +284,7 @@ body {
 
 /* ===================== FOOTER ===================== */
 .page-footer {
+	font-size: minmax(12px, 36px);
     color: #000000;
 	text-align: center;
 	padding: 15px;
