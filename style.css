@@ -51,7 +51,6 @@ body {
     grid-template-columns: 1fr 5fr 1fr;
     align-items: stretch;
 
-
 	padding-top: 2vh;
 	padding-left: 2vw;
 	padding-right: 2vw;
@@ -83,7 +82,7 @@ body {
 /*    min-width: 0;*/
     width: 100%;
 
-    align-items: start;
+    align-items: center;
 	position: centered;
 
     font-family: 'digital-7', monospace;
@@ -115,7 +114,7 @@ body {
     text-align: center;
     width: 100%;
 
-	font-size: clamp(20px, 1.2vw, 72px);
+	font-size: minmax(20px, 72px);
     letter-spacing: 0.05em;
 }
 
@@ -127,7 +126,7 @@ body {
 	white-space: nowrap;
     overflow: hidden;
 
-    font-size: clamp(8px,1.2vw, 36px);
+    font-size: minmax(8px, 36px);
     letter-spacing: 0.18em;
 
     text-transform: uppercase;
