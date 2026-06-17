@@ -51,7 +51,7 @@ body {
 	height: 100%;
     display: grid;
     grid-template-columns: 
-		1fr 5fr 1fr;
+		2fr 7fr 2fr;
 	align-items: center;
 	align-self: center;
     justify-self: center;
@@ -82,9 +82,7 @@ body {
     width: 100%;
 	
     grid-template-columns:
-        auto
-        repeat(6, minmax(32px, 1fr))
-        auto;
+        repeat(8, auto);
 
     font-family: 'digital-7', monospace;
     font-size: clamp(20px, 1.3vw, 72px);
@@ -123,22 +121,6 @@ body {
     letter-spacing: 0.05em;
 }
 
-.nav-label {
-    width: 100%;
-    min-width: 0;
-
-    text-align: center;
-	white-space: nowrap;
-    overflow: hidden;
-
-    font-size: minmax(8px, 36px);
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-    opacity: 0.65;
-    line-height: 1;
-}
-
 .nav-item:hover,
 .nav-item.active {
     color: #00DEFF;
@@ -147,9 +129,6 @@ body {
     transform: translateY(-2px);
 }
 
-.nav-item:hover .nav-label,
-.nav-item.active .nav-label {
-    opacity: 1;
 }
 
 .nav-border-left,
@@ -161,8 +140,6 @@ body {
 
 	font-size: clamp(28px, 1.2vw, 108px);
     line-height: 1;
-	
-    color: #E95133;
 }
 
 /* ===================== HAMBURGER MENU ===================== */
