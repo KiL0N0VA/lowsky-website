@@ -212,18 +212,12 @@ body {
    width: min(100%, 1700px);
    height: calc(100vh - 120px);
 
-   margin: 10px auto;
+   margin: 0px auto;
    display: grid;
    grid-template-columns:
-       1fr
-       5fr
-       1fr;
-   grid-template-rows:
-       1fr
-       minmax(24px, 10%);
+       1fr 5fr 1fr;
    grid-template-areas:
        "area1 area2 area3"
-       "area4 area4 area4";
    border: 0px solid #00FE2A;
    overflow: hidden;
 }
@@ -285,6 +279,8 @@ body {
 
 /* ===================== FOOTER ===================== */
 .page-footer {
+	display: grid;
+	
 	font-size: minmax(12px, 36px);
     color: #000000;
 	text-align: center;
