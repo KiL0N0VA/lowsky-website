@@ -84,6 +84,7 @@ body {
     width: 100%;
 
     align-items: start;
+	position: centered;
 
     font-family: 'digital-7', monospace;
     font-size: clamp(20px, 1.3vw, 72px);
@@ -114,7 +115,7 @@ body {
     text-align: center;
     width: 100%;
 
-	font-size: 0.95rem;
+	font-size: clamp(20px, 1.2vw, 72px);
     letter-spacing: 0.05em;
 }
 
@@ -126,7 +127,7 @@ body {
 	white-space: nowrap;
     overflow: hidden;
 
-    font-size: 0.55rem;
+    font-size: clamp(8px,1.2vw, 36px);
     letter-spacing: 0.18em;
 
     text-transform: uppercase;
@@ -153,7 +154,7 @@ body {
     align-items: center;
     justify-content: center;
 
-	font-size: clamp(24px, 1.8vw, 42px);
+	font-size: clamp(28px, 1.2vw, 108px);
     line-height: 1;
 	
     color: #E95133;
