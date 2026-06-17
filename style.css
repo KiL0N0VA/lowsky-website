@@ -49,9 +49,9 @@ body {
 	height: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    align-items: stretch;
+    align-items: center;
 
-	padding-top: 2vh;
+	padding-top: 5vh;
 	padding-left: 2vw;
 	padding-right: 2vw;
 
