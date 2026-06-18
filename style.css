@@ -220,7 +220,7 @@ h2 {
 /* ========================================== SECTION 2: ========================================== */
 /* ===================== MAIN PAGE ===================== */
 .page-frame {
-   position: relative;	
+   position: static;	
    width: min(100%, 2560px);
    height: calc(100vh - 120px);
 
@@ -257,11 +257,12 @@ h2 {
 .area {
     z-index: 10;
     position: relative;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
 	
     border: 2px solid #00FE2A;
+	border-style: dotted;
     color: #00FE2A;
 }
 
@@ -275,6 +276,10 @@ h2 {
 	display: grid;
 	grid-template-columns: 3fr 2fr 2fr 3fr;
 	grid-template-rows: 1fr 1fr 1fr;
+
+	border: 2px solid #00FE2A;
+	border-style: dashed;
+    color: #00FE2A;
 }
 
 .area-3 {
