@@ -270,6 +270,10 @@ h2 {
 	grid-area: area1;
 }
 
+.area-3 {
+	grid-area: area3;
+}
+
 .area-2 {
 	grid-area: area2;
 	
@@ -282,28 +286,40 @@ h2 {
     color: #00FE2A;
 }
 
-.area-3 {
-	grid-area: area3;
-}
-
 .area-2a {
 	grid-column: 1 / span 2;
 	grid-row: 1 / span 3;
+	display: flex;
+	align-self: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .area-2b {
 	grid-column: 3 / span 2;
 	grid-row: 1
+	display: flex;
+	align-self: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .area-2c {
 	grid-column: 3 / span 2;
 	grid-row: 2;
+	display: flex;
+	align-self: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .area-2d {
 	grid-column: 3 / span 2;
 	grid-row: 3;
+	display: flex;
+	align-self: center;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ===================== FOOTER ===================== */
