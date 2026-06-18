@@ -181,7 +181,7 @@ body {
     }
 }
 ===================== */
-@media (max-width: 1200px) {
+@media (max-width: 520px) {
     .nav-table {
         display: none;
 	}
