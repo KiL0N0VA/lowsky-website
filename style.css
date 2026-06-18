@@ -24,6 +24,14 @@
 	justify-content: aligns items (grid or flex) along the main axis (horizontal in a row)
 	align-content: aligns multiple lines of flex/grid items along the cross axis
 
+    ** fonts
+    font: size/line-height, style, variant, weight, stretch, family
+    serif = flourishes with small details on the ends of strokes
+    sans-serif = simple strokes
+    monospace = every character has the same width
+    cursive = emulate handwriting, flowing strokes
+    fantasy = intended to be decorative
+
 */
 /* ===================== GLOBAL RESET ===================== */
 * {
@@ -41,6 +49,29 @@ body {
         #001218 100%
     );
     overflow-x: hidden;
+}
+h1a { 
+	font: 20px; 
+	font-style: normal;
+	font-weight: 200; 
+	font-family: 'Aptos', sans-serif; 
+	color: #FFFFFF;
+}
+
+h1b { 
+	font: 20px; 
+	font-style: normal;
+	font-weight: 200; 
+	font-family: 'Aptos', sans-serif; 
+	color: #E95133;
+}
+
+h2 { 
+	font: 16px; 
+	font-style: normal;
+	font-weight: 150; 
+	font-family: 'Aptos', sans-serif; 
+	color: #FFFFFF;
 }
 
 /* ========================================== SECTION 1: ========================================== */
