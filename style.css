@@ -196,7 +196,7 @@ body {
    margin: 10px auto;
    display: grid;
    grid-template-columns:
-       1fr 5fr 1fr;
+       1fr 10fr 1fr;
    grid-template-areas:
        "area1 area2 area3"
    border: 0px solid #00FE2A;
@@ -206,20 +206,83 @@ body {
 
 /* ===================== IMAGE OVERLAY ===================== */
 .image-overlay {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
    
-   background-size: cover;
-   background-position: center top;
-   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
 
-   z-index: 5;
-   pointer-events: none;
+    pointer-events: none;
 }
 
+
+
+/* ===================== PAGE AREAS ===================== */
+.area {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	
+    border: 2px solid #00FE2A;
+    color: #00FE2A;
+}
+
+.area-1 {
+	grid-area: area1;
+}
+
+.area-2 {
+	grid-area: area2;
+	
+	display: grid;
+	grid-template-columns: 3fr 2fr 2fr 3fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.area-3 {
+	grid-area: area3;
+}
+
+.area-2a {
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 3;
+}
+
+.area-2b {
+	grid-column: 3 / span 2;
+	grid-row: 1
+}
+
+.area-2c {
+	grid-column: 3 / span 2;
+	grid-row: 2;
+}
+
+.area-2c {
+	grid-column: 3 / span 2;
+	grid-row: 3;
+}
+
+/* ===================== FOOTER ===================== */
+.page-footer {
+	display: grid;
+	
+	font-size: 14px;
+    color: #FFFFFF;
+	text-align: center;
+	padding: 15px;
+}
+
+/* ============================================================================================================== */
+/* ================================================== PAGE-END ================================================== */
+/* ============================================================================================================== */
 
 /* ===================== PAGE-SPECIFIC IMAGES ===================== */
 .page-index .image-overlay {background-image: url("img_s-asteroid_t-50.png");}
@@ -234,33 +297,3 @@ body {
 
 .page-yottabytes .image-overlay {background-image: url("img_s-nebula_t-50.png");}
 
-
-/* ===================== PAGE AREA ===================== */
-.area {
-   position: relative;
-   z-index: 10;
-   border: 0px solid #00FE2A;
-   color: #00FE2A;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.area-1 {grid-area: area1;
-}
-
-.area-2 {grid-area: area2;
-}
-
-.area-3 {grid-area: area3;
-}
-
-/* ===================== FOOTER ===================== */
-.page-footer {
-	display: grid;
-	
-	font-size: 14px;
-    color: #FFFFFF;
-	text-align: center;
-	padding: 15px;
-}
