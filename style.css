@@ -56,7 +56,7 @@ body {
 	align-self: center;
     justify-self: center;
     z-index: 20;
-	border: 2px solid #00FE2A;
+	border: 0px solid #00FE2A;
 }
 
 /* ===================== LOGO ===================== */
@@ -142,8 +142,9 @@ body {
 /* ===================== HAMBURGER MENU ===================== */
 .hamburger-menu {
     grid-column: 3;
-    justify-self: center;
-    align-self: start;
+	display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 25;
 
     background: none;
@@ -151,6 +152,7 @@ body {
     color: #00DEFF;
     font-size: clamp(26px, 2.2vw, 48px);
     line-height: 1;
+	
     cursor: pointer;
     transition:
         transform 0.2s ease,
