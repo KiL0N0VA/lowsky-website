@@ -46,7 +46,7 @@ body {
 /* ========================================== SECTION 1: ========================================== */
 /* ===================== NAVIGATION BAR ===================== */
 .page-nav {
-	margin: 5vh auto;
+	margin: 10px auto;
 	width: 100%;
 	height: 100%;
     display: grid;
