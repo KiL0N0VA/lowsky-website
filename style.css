@@ -227,7 +227,7 @@ h2 {
    margin: 10px auto;
    display: grid;
    grid-template-columns:
-       1fr 10fr 1fr;
+       2fr 8fr 2fr;
    grid-template-areas:
        "area1 area2 area3"
    border: 2px solid #00DEFF;
