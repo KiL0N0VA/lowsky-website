@@ -277,6 +277,11 @@ h2 {
 	grid-area: area3;
 }
 
+.area-4 {
+	z-index: 10;
+	grid-area: area4;
+}
+
 /*
 .area-2a {
 	grid-column: 1 / span 2;
