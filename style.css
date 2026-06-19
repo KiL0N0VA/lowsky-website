@@ -50,20 +50,13 @@ body {
     );
     overflow-x: hidden;
 }
-h1a { 
+
+h1 { 
 	font: 20px; 
 	font-style: normal;
 	font-weight: 200; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
-}
-
-h1b { 
-	font: 20px; 
-	font-style: normal;
-	font-weight: 200; 
-	font-family: 'Aptos', sans-serif; 
-	color: #E95133;
 }
 
 h2 { 
