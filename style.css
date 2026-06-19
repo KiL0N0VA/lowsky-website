@@ -266,7 +266,6 @@ h2 {
 	z-index: 10;
 	grid-area: area2;
 	
-	display: grid;
     border: 2px solid #00FE2A;
 	border-style: dashed;
     color: #00FE2A;
