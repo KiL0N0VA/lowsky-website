@@ -116,6 +116,7 @@ h2 {
 .nav-logo-link {
     z-index: 25;
 	grid-column: 1 / span 2;
+	display: inline;
     justify-self: center;
     align-self: center;
 }
@@ -196,6 +197,7 @@ h2 {
 .hamburger-menu {
     z-index: 25;
 	grid-column: 10 / span 2;
+	display: inline;
     align-items: center;
     justify-content: center;
 
