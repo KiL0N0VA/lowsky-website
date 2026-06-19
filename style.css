@@ -100,7 +100,7 @@ h2 {
 /* ========================================== SECTION 1: ========================================== */
 /* ===================== NAVIGATION BAR ===================== */
 .page-nav {
-	z-index: 20;
+	z-index: 22;
 	margin: 10px auto;
 	width: 100%;
 	height: 100%;
@@ -127,7 +127,8 @@ h2 {
 
 /* ===================== NAV TABLE ===================== */
 .nav-table {
-    grid-column: 3 / span 8;  
+    z-index: 25;
+	grid-column: 3 / span 8;  
 	justify-self: center;
 	align-self: center;
 	
@@ -147,7 +148,8 @@ h2 {
 
 /* ===================== NAV ITEMS ===================== */
 .nav-item {
-    display: grid;
+    z-index: 25;
+	display: grid;
     align-items: center;
     justify-items: center;
 
@@ -163,7 +165,8 @@ h2 {
 }
 
 .nav-letter {
-    display: flex;
+    z-index: 25;
+	display: flex;
     align-items: center;
     justify-content: center;
 	
@@ -184,7 +187,8 @@ h2 {
 
 .nav-border-left,
 .nav-border-right {
-    display: flex;
+    z-index: 25;
+	display: flex;
 	align-self: center;
     align-items: center;
     justify-content: center;
