@@ -244,7 +244,7 @@ h2 {
 /* ========================================== SECTION 2: ========================================== */
 /* ===================== MAIN PAGE ===================== */
 .page-frame {
-    z-index: 8;
+    z-index: 10;
     width: min(100%, 2560px);
     height: calc(100vh - 120px);
 
@@ -261,7 +261,7 @@ h2 {
 
 /* ===================== IMAGE OVERLAY ===================== */
 .image-overlay {
-    z-index: 10;
+    z-index: 8;
     position: absolute;
     top: 0;
     left: 0;
