@@ -1,4 +1,23 @@
 /* ===================== GLOBAL VARIABLES =====================
+	** LAYOUT
+	parent = top level attributes
+	child = inherits parent attributes
+	margin: space outside an element, separates elements from other elements (defined by margin)
+	border: space between the outter margin and the inner padding, customizable line or 'frame' that wraps the padding (defined by border)
+	padding: space inside an element, used to increase clickable/visible area without changing content size (defined by padding)
+	content: inner most area with text, images, etc. (defined by width & height)
+	box-sizing: used to include the padding & the border (defined by witdth & height)
+	z-index: controls the depth of elements, which elements appear in-front and which appear behind on another (top, 30, 20, 10, 0, bot)
+	content-box = sets dimensionalization of content by content-box (no padding, no border, no margin) * DEFAULT
+	border-box = sets dimensionalization of content by border-box (yes padding, yes border, no margin)
+	<div> stack natrually ontop of each other.
+
+*** FLEX
+	flex = element is a block-lvel flex container ** MOST COMMON **
+	ORDERING & ORIENTATION | flex-direction | flex-wrap | flex-flow | order
+	ALIGNMENT | justify-content | align-item, align-self | align-content (flex-start, flex-end, center, space-between, space-around)
+	FLEXIBILITY | flex-grow | flex-shrink | flex-basis | flex	
+
 	** best practice is to use the default font size of the user's device
 	vw: Viewport Width (percentage of browser width, ex: 1vw = 1% of width)
 	vh: Viewport Height (percentage of browser height, ex: 1vh = 1% of height)
@@ -11,20 +30,13 @@
 	pt: Point (inherited from typography, represented in physical units: cm, mm, in, etc.)
 	pc: Pica (inherited from typography, represented in physical units: cm, mm, in, etc.)
 
-	margin: space outside an element, separates elements from other elements (defined by margin)
-	border: space between the outter margin and the inner padding, customizable line or 'frame' that wraps the padding (defined by border)
-	padding: space inside an element, used to increase clickable/visible area without changing content size (defined by padding)
-	content: inner most area with text, images, etc. (defined by width & height)
-	box-sizing: used to include the padding & the border (defined by witdth & height)
-	z-index: controls the depth of elements, which elements appear in-front and which appear behind on another (top, 30, 20, 10, 0, bot)
-
-	** types of position for text, images, content, etc: (start, left, center, right, end, justify [distributed equally])
+	** POSITION for text, images, content, etc: (start, left, center, right, end, justify [distributed equally])
 	text-align: controls text alignment
 	align-items: aligns items (grid or flex) along the cross axis (vertical in a row)
 	justify-content: aligns items (grid or flex) along the main axis (horizontal in a row)
 	align-content: aligns multiple lines of flex/grid items along the cross axis
 
-    ** fonts
+    ** FONTS
     font: size/line-height, style, variant, weight, stretch, family
     serif = flourishes with small details on the ends of strokes
     sans-serif = simple strokes
@@ -32,6 +44,32 @@
     cursive = emulate handwriting, flowing strokes
     fantasy = intended to be decorative
 
+    ** DISPLAY
+	inline = element is inline with element - like <span>
+	inline-table = element displayed as an inline-level table (with horz. padding)
+	inline-block = element displayed wrt to page borders, inline-row (with horz. padding + b/w spacing)
+	inline-flex = element displayed wrt to page borders, inline-row (with horz. padding + vert. padding)
+	inline-grid = element displayed wrt to page borders, inline-column (with horz. padding + vert. padding)
+	block = element is a block element, starts a new line and takes up width - like <p>
+	contents = container dissapears, making the child elements children of the element next level up
+	grid = element is a block-level grid container (use divisible sizing, most common is 12)
+	list-item = element behave like a list - like <li>
+	table = element behaves like <table>
+	table-caption = element behaves like <caption>
+	table-column-group = behave like <colgroup>
+	table-header-group = behave like <thead>
+	table-footer-group = behave like <tfoot>
+	table-row-group = behave like <tfoot>
+	table-cell = behave like <td>
+	table-column = behave like <col>
+	table-row = behave like <tr>
+	run-in = behaves by running into the next element
+	absolute = 
+	relative = 
+
+
+
+	
 */
 /* ===================== GLOBAL RESET ===================== */
 * {
@@ -75,7 +113,7 @@ h2 {
 	height: 100%;
     display: grid;
     grid-template-columns: 
-		2fr 8fr 2fr;
+		repeat(12, 1fr);
 	align-items: center;
 	align-self: center;
     justify-self: center;
@@ -85,7 +123,7 @@ h2 {
 
 /* ===================== LOGO ===================== */
 .nav-logo-link {
-    grid-column: 1;
+    grid-column: 1 / span 2;
     justify-self: center;
     align-self: center;
     z-index: 25;
@@ -97,7 +135,7 @@ h2 {
 
 /* ===================== NAV TABLE ===================== */
 .nav-table {
-    grid-column: 2;  
+    grid-column: 3 / span 8;  
 	justify-self: center;
 	align-self: center;
 	
@@ -165,7 +203,7 @@ h2 {
 
 /* ===================== HAMBURGER MENU ===================== */
 .hamburger-menu {
-    grid-column: 3;
+    grid-column: 10 / span 2;
 	display: flex;
     align-items: center;
     justify-content: center;
@@ -213,7 +251,6 @@ h2 {
 /* ========================================== SECTION 2: ========================================== */
 /* ===================== MAIN PAGE ===================== */
 .page-frame {
-   position: fixed;	
    width: min(100%, 2560px);
    height: calc(100vh - 120px);
 
@@ -223,7 +260,7 @@ h2 {
        2fr 8fr 2fr;
    grid-template-areas:
        "area1 area2 area3"
-	   "area4 area2 area4"
+	   "area4 area4 area4"
    border: 2px solid #00DEFF;
    overflow: hidden;
 }
