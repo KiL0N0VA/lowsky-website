@@ -224,23 +224,6 @@ h2 {
     opacity: 0.85;
 }
 
-/* ===================== COLLISION HANDLING 
-@media (max-width: 1050px) {
-    .page-nav {
-        grid-template-columns: 100px 1fr 100px;
-    }
-    .nav-table {
-        grid-template-columns:
-            auto
-            repeat(6, minmax(80px, 1fr))
-            auto;
-    }
-    .nav-label {
-        font-size: 0.42rem;
-        letter-spacing: 0.1em;
-    }
-}
-===================== */
 @media (max-width: 400px) {
     .nav-table {
         display: none;
@@ -285,7 +268,9 @@ h2 {
 	display: grid;
 	grid-column: 1 / span 2;
 	grid-row: 1 / span 8;
+	border: 10px solid #00DEFF;
 }
+
 .A64 {
 	z-index: 16;
 	display: grid;	
@@ -315,78 +300,6 @@ h2 {
 	grid-row: 5 / span 2;
 }
 
-/* ===================== PAGE AREAS ===================== */
-.area {
-    z-index: 15;
-    position: relative;
-    display: grid;
-	
-    border: 2px solid #00FE2A;
-	border-style: dotted;
-    color: #00FE2A;
-}
-
-.area-1 {
-	z-index: 15;
-	grid-area: area1;
-}
-
-.area-2 {
-	z-index: 15;
-	grid-area: area2;
-	
-    border: 2px solid #00FE2A;
-	border-style: dashed;
-    color: #00FE2A;
-}
-
-.area-3 {
-	z-index: 15;
-	grid-area: area3;
-}
-
-.area-4 {
-	z-index: 15;
-	grid-area: area4;
-}
-
-/*
-.area-2a {
-	grid-column: 1 / span 2;
-	grid-row: 1 / span 3;
-	display: flex;
-	align-self: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.area-2b {
-	grid-column: 3 / span 2;
-	grid-row: 1
-	display: flex;
-	align-self: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.area-2c {
-	grid-column: 3 / span 2;
-	grid-row: 2;
-	display: flex;
-	align-self: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.area-2d {
-	grid-column: 3 / span 2;
-	grid-row: 3;
-	display: flex;
-	align-self: center;
-    align-items: center;
-    justify-content: center;
-}
-*/
 /* ===================== FOOTER ===================== */
 .page-footer {
 	display: grid;
