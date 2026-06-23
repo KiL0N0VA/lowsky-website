@@ -254,7 +254,7 @@ h2 {
     width: min(100%, 2560px);
     height: calc(100vh - 120px);
 
-    margin: 72px auto;
+    margin: 10px auto;
     display: grid;
     grid-template-columns:
        repeat(12, 1fr)
