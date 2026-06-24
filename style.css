@@ -89,12 +89,28 @@ body {
     overflow-x: hidden;
 }
 
-h1 { 
-	font: 20px; font-style: normal; font-weight: 200; font-family: 'Verdana', sans-serif; color: #FFFFFF;
+h1-wht { 
+	font: 20px; 
+	font-style: normal; 
+	font-weight: 200; 
+	font-family: 'Aptos', sans-serif; 
+	color: #FFFFFF;
+}
+
+h1-org { 
+	font: 20px; 
+	font-style: normal; 
+	font-weight: 200; 
+	font-family: 'Aptos', sans-serif; 
+	color: #FFFFFF;
 }
 
 h2 { 
-	font: 16px; font-style: normal; font-weight: 150; font-family: 'Georgia', serif; color: #FFFFFF;
+	font: 16px; 
+	font-style: normal; 
+	font-weight: 150; 
+	font-family: 'Georgia', serif; 
+	color: #FFFFFF;
 }
 
 /* ========================================== SECTION 1: ========================================== */
