@@ -1,5 +1,5 @@
 /* ===================== GLOBAL VARIABLES =====================
-	** LAYOUT
+** LAYOUT
 	parent = top level attributes
 	child = inherits parent attributes
 	margin: space outside an element, separates elements from other elements (defined by margin)
@@ -18,7 +18,7 @@
 	ALIGNMENT | justify-content | align-item, align-self | align-content (flex-start, flex-end, center, space-between, space-around)
 	FLEXIBILITY | flex-grow | flex-shrink | flex-basis | flex	
 
-	** best practice is to use the default font size of the user's device
+** best practice is to use the default font size of the user's device
 	vw: Viewport Width (percentage of browser width, ex: 1vw = 1% of width)
 	vh: Viewport Height (percentage of browser height, ex: 1vh = 1% of height)
 	rem: Root em (font size of the root element of the document)
@@ -30,7 +30,7 @@
 	pt: Point (inherited from typography, represented in physical units: cm, mm, in, etc.)
 	pc: Pica (inherited from typography, represented in physical units: cm, mm, in, etc.)
 
-	** POSITION for text, images, content, etc: (start, left, center, right, end, justify [distributed equally])
+** POSITION for text, images, content, etc: (start, left, center, right, end, justify [distributed equally])
 	text-align: controls text alignment
 	align-items: aligns items (grid or flex) along the cross axis (vertical in a row)
 	justify-content: aligns items (grid or flex) along the main axis (horizontal in a row)
@@ -45,7 +45,7 @@
     cursive = emulate handwriting, flowing strokes
     fantasy = intended to be decorative
 
-    ** DISPLAY
+** DISPLAY
 	inline = element is inline with element - like <span>
 	inline-table = element displayed as an inline-level table (with horz. padding)
 	inline-block = element displayed wrt to page borders, inline-row (with horz. padding + b/w spacing)
@@ -314,7 +314,7 @@ h2 {
 	display: grid;
 	grid-column: 11 / span 2;
 	grid-row: 1 / span 8;
-	border: 2px solid #00FF00;
+	border: 0px solid #00FF00;
 	background: #000000;
 	opacity: 0.5;
 	font: 20px; 
@@ -323,7 +323,8 @@ h2 {
 	font-family: 'Verdana', sans-serif; 
 	color: #000000;
 }
-/* ===================== SUB-AREAS ===================== */
+/* ===================================================================== SUB-AREAS ===================================================================== */
+/* ===================== ANIMATION WINDOWS ===================== */
 .Animate-5x8 {
 	z-index: 16;
 	display: grid;	
@@ -333,6 +334,27 @@ h2 {
 	width: 100%;
     height: 100%;
 	border: 2px solid #8808FF;
+}
+.Animate-38x35 {
+	z-index: 16;
+	display: grid;	
+	grid-column: 3 / span 5;
+	grid-row: 3 / span 5;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #00FF00;
+}
+/* ===================== TEXT WINDOWS ===================== */
+.Text-A-38x21 {
+	z-index: 18;
+	display: grid;
+	grid-column: 3 / span 8;
+	grid-row: 2 / span 1;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #FF08FF;
 }
 .Text-A-3x2 {
 	z-index: 18;
