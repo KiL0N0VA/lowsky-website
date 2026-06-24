@@ -386,6 +386,37 @@ h2 {
     height: 100%;
 	border: 2px solid #FF9900;
 }
+/* ===================== CONTACT WINDOWS ===================== */
+.cont-e-33x72 {
+	z-index: 18;
+	display: grid;
+	grid-column: 3 / span 3;
+	grid-row: 7 / span 2;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #FF9900;
+}
+.cont-p-62x72 {
+	z-index: 18;
+	display: grid;
+	grid-column: 6 / span 2;
+	grid-row: 7 / span 2;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #FF9900;
+}
+.cont-m-83x72 {
+	z-index: 18;
+	display: grid;
+	grid-column: 8 / span 3;
+	grid-row: 7 / span 2;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #FF9900;
+}
 
 /* ===================== FOOTER ===================== */
 .page-footer {
