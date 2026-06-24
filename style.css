@@ -208,8 +208,6 @@ h2 {
     justify-content: center;
 
     background: none;
-    border: none;
-    color: #00DEFF;
     font-size: clamp(26px, 2.2vw, 48px);
     line-height: 1;
 	
@@ -220,7 +218,8 @@ h2 {
 }
 
 .hamburger-menu:hover {
-    transform: scale(1.08);
+    display: inline;
+	transform: scale(1.08);
     opacity: 0.85;
 }
 
