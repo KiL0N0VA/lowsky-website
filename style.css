@@ -262,7 +262,21 @@ h2 {
 
     pointer-events: none;
 }
-.sidebar {
+.sidebarleft {
+	z-index: 18;
+	display: grid;
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 8;
+	border: 10px solid #00DEFF;
+	background: #000000;
+	opacity: 0.5;
+	font: 20px; 
+	font-style: normal; 
+	font-weight: 200; 
+	font-family: 'Verdana', sans-serif; 
+	color: #000000;
+}
+.sidebarright {
 	z-index: 18;
 	display: grid;
 	grid-column: 1 / span 2;
