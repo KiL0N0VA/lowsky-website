@@ -294,7 +294,7 @@ h2 {
 .A64 {
 	z-index: 16;
 	display: grid;	
-	grid-column: 3 / span 6;
+	grid-column: 3 / span 4;
 	grid-row: 1 / span 4;
 
 	width: 100%;
@@ -304,19 +304,19 @@ h2 {
 .A42 {
 	z-index: 18;
 	display: grid;
-	grid-column: 5 / span 4;
+	grid-column: 5 / span 2;
 	grid-row: 1 / span 2;
 }
 .B42 {
 	z-index: 18;
 	display: grid;
-	grid-column: 5 / span 4;
+	grid-column: 5 / span 2;
 	grid-row: 3 / span 2;
 }
 .B82 {
 	z-index: 18;
 	display: grid;
-	grid-column: 1 / span 8;
+	grid-column: 1 / span 6;
 	grid-row: 5 / span 2;
 }
 
