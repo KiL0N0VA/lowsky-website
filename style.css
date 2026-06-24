@@ -333,7 +333,7 @@ h2 {
 
 	width: 100%;
     height: 100%;
-	border: 2px solid #8808FF;
+	border: 0px solid #8808FF;
 }
 .Animate-38x35 {
 	z-index: 16;
@@ -364,7 +364,7 @@ h2 {
 
 	width: 100%;
     height: 100%;
-	border: 2px solid #FF08FF;
+	border: 0px solid #FF08FF;
 }
 .Text-B-3x2 {
 	z-index: 18;
@@ -374,7 +374,7 @@ h2 {
 	
 	width: 100%;
     height: 100%;
-	border: 2px solid #FFFB08;
+	border: 0px solid #FFFB08;
 }
 .Text-C-3x4 {
 	z-index: 18;
@@ -384,7 +384,7 @@ h2 {
 
 	width: 100%;
     height: 100%;
-	border: 2px solid #FF9900;
+	border: 0px solid #FF9900;
 }
 /* ===================== CONTACT WINDOWS ===================== */
 .cont-e-33x72 {
