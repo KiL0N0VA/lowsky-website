@@ -218,10 +218,12 @@ h2 {
 /* ===================== HAMBURGER MENU ===================== */
 .hamburger-menu {
     z-index: 25;
-	grid-column: 11 / span 2;
-	display: inline;
+/*	grid-column: 11 / span 2;
+	display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+	justify-self: center;
+	align-self: center;
 
     background: none;
 	border: none;
@@ -229,6 +231,7 @@ h2 {
 	box-shadow: none;
 	padding: 0;
 	cursor: pointer;
+	
     transition:
         transform 0.2s ease,
         opacity 0.2s ease;
