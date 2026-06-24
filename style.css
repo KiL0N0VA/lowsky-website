@@ -267,7 +267,7 @@ h2 {
 	display: grid;
 	grid-column: 1 / span 2;
 	grid-row: 1 / span 8;
-	border: 10px solid #00DEFF;
+	border: 0px solid #00DEFF;
 	background: #000000;
 	opacity: 0.5;
 	font: 20px; 
@@ -281,7 +281,7 @@ h2 {
 	display: grid;
 	grid-column: 1 / span 2;
 	grid-row: 1 / span 8;
-	border: 10px solid #00DEFF;
+	border: 0px solid #00DEFF;
 	background: #000000;
 	opacity: 0.5;
 	font: 20px; 
