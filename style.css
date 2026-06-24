@@ -239,9 +239,9 @@ h2 {
     margin: 10px auto;
     display: grid;
     grid-template-columns:
-       repeat(12, 1fr)
+       repeat(12, 1fr);
     grid-template-rows:
-       repeat(8, 1fr)
+       repeat(8, 1fr);
     border: 2px solid #00DEFF;
     overflow: hidden;
 }
