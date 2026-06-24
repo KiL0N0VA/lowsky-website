@@ -36,8 +36,9 @@
 	justify-content: aligns items (grid or flex) along the main axis (horizontal in a row)
 	align-content: aligns multiple lines of flex/grid items along the cross axis
 
-    ** FONTS
+** FONTS
     font: size/line-height, style, variant, weight, stretch, family
+	font-weight: 100 (thin), 400 (normal), 700 (bold), 900 (extra-bold)
     serif = flourishes with small details on the ends of strokes
     sans-serif = simple strokes
     monospace = every character has the same width
@@ -88,7 +89,7 @@ body {
 h1-wht { 
 	font: 20px; 
 	font-style: normal; 
-	font-weight: 200; 
+	font-weight: 700; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
 }
@@ -96,7 +97,7 @@ h1-wht {
 h1-org { 
 	font: 20px; 
 	font-style: normal; 
-	font-weight: 200; 
+	font-weight: 700; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
 }
