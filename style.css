@@ -129,7 +129,7 @@ h2 {
 .nav-logo-link {
     z-index: 25;
 	margin-top: 15px;
-/*	grid-column: 1 / span 2; */
+	grid-column: 1 / span 2;
 	display: inline;
     justify-self: center;
     align-self: center;
@@ -218,7 +218,8 @@ h2 {
     z-index: 25;
 /*	grid-column: 11 / span 2;
 	display: flex;  */
-    justify-content: center;
+	grid-column: 11 / span 2;    
+	justify-content: center;
 	align-items: center;
 	justify-self: center;
 	align-self: center;
@@ -303,7 +304,7 @@ h2 {
 	grid-row: 1 / span 8;
 	border: 0px solid #00DEFF;
 	background: #000000;
-	opacity: 0.75;
+	opacity: 0.85;
 	font: 20px; 
 	font-style: normal; 
 	font-weight: 200; 
@@ -418,7 +419,7 @@ h2 {
 .Text-73x4x2 {
 	z-index: 18;
 	display: grid;
-	grid-column: 7 / span 3;
+	grid-column: 7 / span 4;
 	grid-row: 3 / span 2;
 	
 	width: 100%;
@@ -430,7 +431,7 @@ h2 {
 .Text-75x4x2 {
 	z-index: 18;
 	display: grid;
-	grid-column: 7 / span 3;
+	grid-column: 7 / span 4;
 	grid-row: 5 / span 2;
 	
 	width: 100%;
