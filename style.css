@@ -99,7 +99,7 @@ h1-org {
 	font-style: normal; 
 	font-weight: 700; 
 	font-family: 'Aptos', sans-serif; 
-	color: #FFFFFF;
+	color: #E95133;
 }
 
 h2 { 
@@ -216,9 +216,9 @@ h2 {
 .hamburger-menu {
     z-index: 25;
 /*	grid-column: 11 / span 2;
-	display: flex;
-    align-items: center;
-    justify-content: center; */
+	display: flex;  */
+    justify-content: center;
+	align-items: center;
 	justify-self: center;
 	align-self: center;
 
@@ -316,7 +316,7 @@ h2 {
 	grid-row: 1 / span 8;
 	border: 0px solid #00FF00;
 	background: #000000;
-	opacity: 0.5;
+	opacity: 0.0;
 	font: 20px; 
 	font-style: normal; 
 	font-weight: 200; 
