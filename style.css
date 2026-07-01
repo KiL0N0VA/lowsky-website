@@ -126,10 +126,18 @@ h2 {
 }
 
 /* ===================== LOGO ===================== */
+.nav-logo-wrapper {
+	position: relative;
+	grid-column: 1 / span 2;
+
+	justify-self: center;
+	align-self: center;
+}
+
 .nav-logo-link {
     z-index: 25;
 	margin-top: 15px;
-	grid-column: 1 / span 2;
+/*	grid-column: 1 / span 2; */
 	display: inline;
     justify-self: center;
     align-self: center;
@@ -137,7 +145,79 @@ h2 {
 .nav-logo {
 	width: clamp(32px, 2.4vw, 72px);
     height: auto;
+
+	transition: transform 0.25s ease;
 }
+
+.logo-sidebar {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(-10px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    min-width: 180px;
+    padding: 16px;
+
+    background: rgba(0, 18, 24, 0.95);
+
+    border: 2px solid #00DEFF;
+    border-radius: 12px;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 100;
+}
+
+/* Show menu on hover */
+.nav-logo-wrapper:hover .logo-sidebar {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(10px);
+}
+
+/* Menu items */
+.logo-sidebar a {
+    padding: 10px 14px;
+
+    color: #00DEFF;
+    text-decoration: none;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.logo-sidebar a:hover {
+    background: rgba(0, 222, 255, 0.12);
+
+    color: #FFFFFF;
+
+    transform: translateX(6px);
+}
+
 
 /* ===================== NAV TABLE ===================== */
 .nav-table {
@@ -302,7 +382,7 @@ h2 {
 	grid-row: 1 / span 8;
 	border: 0px solid #00DEFF;
 	background: #000000;
-	opacity: 0.5;
+	opacity: 0.75;
 	font: 20px; 
 	font-style: normal; 
 	font-weight: 200; 
@@ -316,7 +396,7 @@ h2 {
 	grid-row: 1 / span 8;
 	border: 0px solid #00FF00;
 	background: #000000;
-	opacity: 0.0;
+	opacity: 1.0;
 	font: 20px; 
 	font-style: normal; 
 	font-weight: 200; 
