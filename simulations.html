@@ -5,76 +5,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lowsky</title>
+    <title>Mesh Model</title>
     <link rel="stylesheet" href="style.css">
 </head>
 	
 <body class="page-simulations">
 
-<!-- ================================== SECTION 1: HEADER ================================== -->
-    <header class="page-nav">
-		
-<!-- ================= 1A: LOGO ================= -->
-		<a href="stampede.html" class="nav-logo-link">
-			<img 
-	    		src="logo_s-mono_c-deff_s-XS_t-100.png"
-        		alt="Lowsky logo"
-        		class="nav-logo">
-    	</a>
-<!-- ================= 1B: NAV TABLE ================= -->		
-    	<nav class="nav-table">
-        	<span class="nav-border-left">[</span>
-			<a href="index.html" class="nav-item">
-			<span class="nav-letter">L</span>
-			</a>
-    		<a href="operations.html" class="nav-item">
-			<span class="nav-letter">O</span>
-			</a>
-    		<a href="wardens.html" class="nav-item">		
-			<span class="nav-letter">W</span>
-			</a>
-			<a href="simulations.html" class="nav-item active">
-			<span class="nav-letter">S</span>
-			</a>
-			<a href="kernels.html" class="nav-item">	
-			<span class="nav-letter">K</span>
-			</a>
-			<a href="yottabytes.html" class="nav-item"> 		
-			<span class="nav-letter">Y</span>
-			</a>
-			<span class="nav-border-right">]</span>
-    	</nav>
-		
-<!-- ================= 1C: HAM MENU ================= -->		
-    	<button class="hamburger-menu" aria-label="Open menu">
-        	☰
-    	</button>
-	</header>
+	 canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
 	
-<!-- ================================== SECTION 2: MAIN ================================== -->
-    <main class="page-frame">
-        <div class="image-overlay">
-		</div>
-		<div class="sidebarleft"> 
-			<p>
-				HUD
-				<br>
-				NAV
-				<br>
-				LEI
-			</p>
-		</div>
-		<div class="sidebarright"> 
-		</div>
-		<div class="A64"> Future Simulation </div>
-		<div class="A42"> Advancing </div>
-		<div class="B42"> Mission </div>
-		<div class="B82"> Site Under Construction </div>
-    </main>
-	
-<!-- ================================== SECTION 3: FOOTER ================================== -->
-    <footer class="page-footer">
-        &copy; 2026 Lowsky Technologies. All rights reserved.
-	</footer>
+<canvas id="scene"></canvas>
+
+<script>
+const canvas = document.getElementById("scene");
+const ctx = canvas.getContext("2d");
+
+let w, h, cx, cy;
+let angle = 0;
+
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+  cx = w / 2;
+  cy = h / 2;
+}
+window.addEventListener("resize", resize);
+resize();
+
+const points = [];
+const radius = 180;
+const rings = 22;
+const segments = 48;
+
+for (let i = 0; i <= rings; i++) {
+  const theta = (i / rings) * Math.PI;
+
+  for (let j = 0; j < segments; j++) {
+    const phi = (j / segments) * Math.PI * 2;
+
+    points.push({
+      x: radius * Math.sin(theta) * Math.cos(phi),
+      y: radius * Math.cos(theta),
+      z: radius * Math.sin(theta) * Math.sin(phi)
+    });
+  }
+}
+
+const stars = Array.from({ length: 250 }, () => ({
+  x: Math.random() * window.innerWidth,
+  y: Math.random() * window.innerHeight,
+  r: Math.random() * 1.7 + 0.4
+}));
+
+function project(p) {
+  const cos = Math.cos(angle);
+  const sin = Math.sin(angle);
+
+  const x = p.x * cos - p.z * sin;
+  const z = p.x * sin + p.z * cos;
+  const y = p.y;
+
+  const depth = 550;
+  const scale = depth / (depth + z);
+
+  return {
+    x: cx + x * scale,
+    y: cy + y * scale,
+    size: Math.max(1, 4 * scale),
+    alpha: 0.35 + scale * 0.65
+  };
+}
+
+function drawBackground() {
+  ctx.fillStyle = "#030303";
+  ctx.fillRect(0, 0, w, h);
+
+  ctx.fillStyle = "white";
+  stars.forEach(s => {
+    ctx.globalAlpha = 0.35;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  ctx.globalAlpha = 1;
+}
+
+function drawMesh() {
+  ctx.strokeStyle = "rgba(255,255,255,0.55)";
+  ctx.lineWidth = 1.2;
+
+  const projected = points.map(project);
+
+  for (let i = 0; i <= rings; i++) {
+    ctx.beginPath();
+    for (let j = 0; j < segments; j++) {
+      const p = projected[i * segments + j];
+      if (j === 0) ctx.moveTo(p.x, p.y);
+      else ctx.lineTo(p.x, p.y);
+    }
+    ctx.closePath();
+    ctx.stroke();
+  }
+
+  for (let j = 0; j < segments; j += 4) {
+    ctx.beginPath();
+    for (let i = 0; i <= rings; i++) {
+      const p = projected[i * segments + j];
+      if (i === 0) ctx.moveTo(p.x, p.y);
+      else ctx.lineTo(p.x, p.y);
+    }
+    ctx.stroke();
+  }
+
+  projected.forEach(p => {
+    ctx.globalAlpha = p.alpha;
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  ctx.globalAlpha = 1;
+}
+
+function animate() {
+  drawBackground();
+  drawMesh();
+
+  angle += 0.006;
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+
 </body>
 </html>
