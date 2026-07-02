@@ -87,17 +87,17 @@ body {
 }
 /* ===================== HEADERS ===================== */
 h1 { 
-	font: 20px; 
+	font-size: clamp(14px, 1.2vw, 48px);
 	font-style: normal; 
-	font-weight: 700; 
+	font-weight: 400; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
 }
 
 h1-org { 
-	font: 20px; 
+	font-size: clamp(14px, 1.2vw, 48px); 
 	font-style: normal; 
-	font-weight: 700; 
+	font-weight: 400; 
 	font-family: 'Aptos', sans-serif; 
 	color: #E95133;
 }
