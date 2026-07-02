@@ -34,8 +34,8 @@ resize();
 // ==================================================
 
 const radius = 160;
-const rings = 20;
-const segments = 40;
+const rings = 10;
+const segments = 20;
 
 const points = [];
 
