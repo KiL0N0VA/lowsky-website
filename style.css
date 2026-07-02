@@ -491,11 +491,11 @@ h2 {
 .page-footer {
 	display: grid;
 	
-	font-size: 14px;
+	font-size: 12px;
     color: #FFFFFF;
 	text-align: center;
 	padding: 15px;
-	border: 2px solid #FF9900;
+	border: none;
 }
 
 /* ============================================================================================================== */
