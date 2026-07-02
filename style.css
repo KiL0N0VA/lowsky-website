@@ -103,11 +103,7 @@ h1 {
 	color: #FFFFFF;
 }
 
-h1-org { 
-	font-size: clamp(18px, 1.2vw, 48px); 
-	font-style: normal; 
-	font-weight: 550; 
-	font-family: 'Aptos', sans-serif; 
+.h1org { 
 	color: #E95133;
 }
 
