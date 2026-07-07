@@ -269,7 +269,7 @@ h2 {
        repeat(12, 1fr);
     grid-template-rows:
        repeat(8, 1fr);
-    border: 2px solid #00DEFF;
+    border: 0px solid #00DEFF;
     overflow: hidden;
 }
 /* ===================== FRAME-GRID =====================
