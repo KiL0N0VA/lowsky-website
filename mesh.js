@@ -5,18 +5,10 @@
 const canvas = document.getElementById("mesh-canvas");
 const ctx = canvas.getContext("2d");
 const container = document.getElementById("mesh-container");
-const observer = new ResizeObserver(() => {
-    const width = container.clientWidth;
-    const height = contatiner.clientHeight;
-    renderer.setSize(width,height,false);
-    camera.aspect = width/height;
-    camera.updateProjectMatrix();
-});
-
-observer.observe(container);
 
 let w, h, cx, cy;
 let angle = 0;
+let stars = [];
 
 
 // ==================================================
@@ -31,9 +23,36 @@ function resize() {
 
     cx = w / 2;
     cy = h / 2;
+
+    // Regenerate stars to fit the resized container
+    createStars();
 }
 
-window.addEventListener("resize", resize);
+
+// Automatically resize whenever mesh-container changes size
+const observer = new ResizeObserver(() => {
+    resize();
+});
+
+observer.observe(container);
+
+
+// ==================================================
+// BACKGROUND STARFIELD
+// Decorative dotted space effect
+// ==================================================
+
+function createStars() {
+
+    stars = Array.from({ length: 120 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.5 + 0.3
+    }));
+}
+
+
+// Initial sizing
 resize();
 
 
@@ -66,20 +85,8 @@ for (let i = 0; i <= rings; i++) {
 
 
 // ==================================================
-// BACKGROUND STARFIELD
-// Decorative dotted space effect
-// ==================================================
-
-const stars = Array.from({ length: 120 }, () => ({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    r: Math.random() * 1.5 + 0.3
-}));
-
-
-// ==================================================
 // 3D → 2D PROJECTION
-// Applies rotation and perspective scaling
+// Rotation + perspective + responsive scaling
 // ==================================================
 
 function project(point) {
@@ -87,17 +94,38 @@ function project(point) {
     const c = Math.cos(angle);
     const s = Math.sin(angle);
 
-    const x = point.x * c - point.z * s;
-    const z = point.x * s + point.z * c;
+    // Automatically fit mesh inside container
+    const fitScale = Math.min(w, h) / 400;
 
+    // Rotate around Y axis
+    const x =
+        (point.x * c - point.z * s) * fitScale;
+
+    const z =
+        (point.x * s + point.z * c) * fitScale;
+
+    const y =
+        point.y * fitScale;
+
+    // Perspective
     const depth = 450;
-    const scale = depth / (depth + z);
+
+    const perspective =
+        depth / (depth + z);
 
     return {
-        x: cx + x * scale,
-        y: cy + point.y * scale,
-        size: Math.max(1, scale * 3),
-        alpha: scale
+        x: cx + x * perspective,
+        y: cy + y * perspective,
+
+        size: Math.max(
+            1,
+            perspective * 3 * fitScale
+        ),
+
+        alpha: Math.min(
+            1,
+            Math.max(0.15, perspective)
+        )
     };
 }
 
@@ -111,18 +139,34 @@ function draw() {
 
     ctx.clearRect(0, 0, w, h);
 
-    // Background dots
+
+    // ----------------------------------------------
+    // BACKGROUND STARS
+    // ----------------------------------------------
+
+    ctx.globalAlpha = 1;
     ctx.fillStyle = "rgba(255,255,255,0.25)";
 
     stars.forEach(star => {
 
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-        ctx.fill();
 
+        ctx.arc(
+            star.x,
+            star.y,
+            star.r,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
     });
 
-    // Mesh points
+
+    // ----------------------------------------------
+    // ROTATING MESH
+    // ----------------------------------------------
+
     points.forEach(point => {
 
         const p = project(point);
@@ -130,17 +174,35 @@ function draw() {
         ctx.globalAlpha = p.alpha;
 
         ctx.beginPath();
-        ctx.fillStyle = "white";
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
 
+        ctx.fillStyle = "white";
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
     });
 
+
+    // Reset opacity
     ctx.globalAlpha = 1;
 
+
+    // Rotation speed
     angle += 0.004;
+
 
     requestAnimationFrame(draw);
 }
+
+
+// ==================================================
+// START ANIMATION
+// ==================================================
 
 draw();
