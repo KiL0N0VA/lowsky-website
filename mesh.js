@@ -5,6 +5,15 @@
 const canvas = document.getElementById("mesh-canvas");
 const ctx = canvas.getContext("2d");
 const container = document.getElementById("mesh-container");
+const observer = new ResizeObserver(() => {
+    const width = container.clientWidth;
+    const height = contatiner.clientHeight;
+    renderer.setSize(width,height,false);
+    camera.aspect = width/height;
+    camera.updateProjectMatrix();
+});
+
+observer.observe(container);
 
 let w, h, cx, cy;
 let angle = 0;
