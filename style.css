@@ -494,14 +494,69 @@ h2 {
 }
 
 /* ===================== FOOTER ===================== */
+.page-footer1 {
+    width: 100%;
+    box-sizing: border-box;
+
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 1fr;
+	gap: 100px;
+
+	padding: 55px 6% 60px;
+
+	background: #0b0b0b0b;
+	color: #ffffff;
+	opacity: 0.65;
+}
+
 .page-footer {
 	display: grid;
-	
+    	
 	font-size: 12px;
     color: #FFFFFF;
-	text-align: center;
+	text-align: right;
 	padding: 15px;
 	border: none;
+}
+
+.footer-columnA {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.footer-column h3 {
+	margin: 9 9 22px;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+
+	color: #ffffff;
+}
+.footer-column p {
+	max-width: 300px;
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.8;
+
+	color: #000000;
+}
+
+/* ===================== HOVER LINKS ===================== */
+.footer-column a {
+	position: relative;
+	margin-bottom: 14px;
+	color: rgba(255, 255, 255, 0.72);
+	text-decoration: none;
+
+	font-size: 14px;
+
+	transition:
+		color 0.2s ease,
+		transform 0.2s ease;
+}
+.footer-column a: hover {
+	color: #ffffff;
+	transform: translateX(4px);
 }
 
 #mesh-container {
