@@ -95,6 +95,13 @@ body {
     overflow-x: hidden;
 }
 /* ===================== HEADERS ===================== */
+p {
+	font-size: clamp(14px, 1.2vw, 48px);
+	font-style: normal; 
+	font-weight: 550; 
+	font-family: 'Aptos', sans-serif; 
+	color: #FFFFFF;
+
 h1 { 
 	font-size: clamp(18px, 1.2vw, 48px);
 	font-style: normal; 
@@ -532,7 +539,6 @@ h2 {
 	font-size: 18px;
 	font-weight: 600;
 	letter-spacing: 0.03em;
-
 	color: #ffffff;
 }
 .footer-column p {
@@ -540,8 +546,7 @@ h2 {
 	margin: 0;
 	font-size: 14px;
 	line-height: 1.8;
-
-	color: #000000;
+	color: #ffffff;
 }
 
 /* ===================== HOVER LINKS ===================== */
