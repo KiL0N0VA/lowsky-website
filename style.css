@@ -84,6 +84,12 @@ COLORS:
     box-sizing: border-box;
 }
 
+:root {
+	--font-digital: "Digital-7", monospace;
+	--font-system: "Segoe UI", Arial, sans-serif;
+	--font-mono: "Courier New", monospace;
+	--font-exo: "Exo 2", sans-serif;
+
 /* ===================================================================== PAGE FOUNDATION ===================================================================== */
 body {
     min-height: 100vh;
@@ -507,16 +513,16 @@ h2 {
 	border: 2px solid #5DD5FF;
 }
 
-/* =========================================
-   AREA 4 / FOOTER
-========================================= */
+/* ===================================================================================================================================================== */
+/* ====================================================================== FOOTER  ====================================================================== */
+/* ===================================================================================================================================================== */
 
 .area-4 {
-    
 	grid-area: area4;
     display: block;
     padding: 0;
     border: none;
+	font-family: var(--font-exo);
 }
 
 
@@ -525,7 +531,6 @@ h2 {
 ========================================= */
 
 .site-footer {
-
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -538,7 +543,6 @@ h2 {
 ========================================= */
 
 .footer-top {
-
     display: grid;
     grid-template-columns:
         1.35fr
@@ -551,7 +555,6 @@ h2 {
 
 
 .footer-column {
-
     border: 0px solid #00FE2A;
     padding: 12px 14px;
     display: flex;
@@ -561,7 +564,6 @@ h2 {
 
 
 .footer-column a {
-
     color: rgba(255, 255, 255, 0.22);
     text-decoration: none;
     font-size: clamp(13px, 1vw, 18px);
@@ -572,7 +574,6 @@ h2 {
 
 
 .footer-column a:hover {
-
     color: #5DD5FF;
     text-shadow:
         0 0 8px rgba(93, 213, 255, 0.5);
@@ -584,26 +585,21 @@ h2 {
 ========================================= */
 
 .footer-brand {
-
     position: relative;
 }
 
-
 .footer-brand-bottom {
-
     margin-top: auto;
 }
 
 
 .footer-brand-bottom p {
-
     font-size: clamp(13px, 1vw, 18px);
     line-height: 1.35;
 }
 
 
 .footer-brand-bottom a {
-
     color: #5DD5FF;
     text-decoration: underline;
     font-size: clamp(13px, 1vw, 18px);
@@ -615,7 +611,6 @@ h2 {
 ========================================= */
 
 .footer-bottom {
-
     display: grid;
     grid-template-columns:
         1.35fr
@@ -632,7 +627,6 @@ h2 {
 ========================================= */
 
 .footer-subscribe {
-
     min-height: 95px;
     display: flex;
     align-items: center;
@@ -642,7 +636,6 @@ h2 {
 
 
 .subscribe-button {
-
     width: 100%;
     max-width: 290px;
     height: 62px;
@@ -661,7 +654,6 @@ h2 {
 
 .subscribe-button::before,
 .subscribe-button::after {
-
     content: "";
     position: absolute;
     width: 9px;
@@ -669,17 +661,13 @@ h2 {
     top: 0;
 }
 
-
 .subscribe-button::before {
-
     left: 0;
     border-top: 0px solid rgba(255,255,255,0.55);
     border-left: 0px solid rgba(255,255,255,0.55);
 }
 
-
 .subscribe-button::after {
-
     right: 0;
     border-top: 0px solid rgba(255,255,255,0.55);
     border-right: 0px solid rgba(255,255,255,0.55);
@@ -691,11 +679,10 @@ h2 {
 ========================================= */
 
 .footer-copyright {
-
     border: 0px solid #00FE2A;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     text-align: center;
     min-height: 95px;
@@ -708,25 +695,22 @@ h2 {
 ========================================= */
 
 .footer-social {
-
     border: 0px solid #00FE2A;
     min-height: 95px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: clamp(10px, 1.5vw, 24px);
-
     padding: 12px 18px;
 }
 
-
 .footer-social a {
-
     color: white;
     text-decoration: none;
     font-weight: 700;
     font-size: clamp(13px, 1.3vw, 23px);
 }
+
 #mesh-container {
 	position: absolute;
 	inset: 0;
