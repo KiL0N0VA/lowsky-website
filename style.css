@@ -507,70 +507,275 @@ h2 {
 	border: 2px solid #5DD5FF;
 }
 
-/* ===================== FOOTER ===================== */
-.page-footer1 {
+/* =========================================
+   AREA 4 / FOOTER
+========================================= */
+
+.area-4 {
+    grid-area: area4;
+
+    display: block;
+
+    padding: 0;
+
+    border: none;
+}
+
+
+/* =========================================
+   FOOTER FRAME
+========================================= */
+
+.site-footer {
+
     width: 100%;
-    box-sizing: border-box;
 
-	display: grid;
-	grid-template-columns: 2fr 1fr 1fr 1fr;
-	gap: 100px;
+    display: flex;
+    flex-direction: column;
 
-	padding: 55px 6% 60px;
-
-	background: #0b0b0b0b;
-	color: #ffffff;
-	opacity: 0.65;
+    color: white;
 }
 
-.page-footer {
-	display: grid;
-    	
-	font-size: 12px;
-    color: #FFFFFF;
-	text-align: right;
-	padding: 15px;
-	border: none;
+
+/* =========================================
+   TOP FOOTER
+========================================= */
+
+.footer-top {
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr
+        1fr
+        1fr
+        1fr;
+
+    gap: clamp(18px, 2vw, 46px);
+
+    min-height: 265px;
 }
+
+
+.footer-column {
+
+    border: 2px solid #00FE2A;
+
+    padding: 12px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 26px;
+}
+
 
 .footer-column a {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-.footer-column h3 {
-	margin: 9 9 22px;
-	font-size: 18px;
-	font-weight: 600;
-	letter-spacing: 0.03em;
-	color: #ffffff;
-}
-.footer-column p {
-	max-width: 300px;
-	margin: 0;
-	font-size: 14px;
-	line-height: 1.8;
-	color: #ffffff;
+
+    color: rgba(255, 255, 255, 0.22);
+
+    text-decoration: none;
+
+    font-size: clamp(13px, 1vw, 18px);
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
 }
 
-/* ===================== HOVER LINKS ===================== */
-.footer-column a {
-	position: relative;
-	margin-bottom: 14px;
-	color: rgba(255, 255, 255, 0.72);
-	text-decoration: none;
 
-	font-size: 14px;
+.footer-column a:hover {
 
-	transition:
-		color 0.2s ease,
-		transform 0.2s ease;
-}
-.footer-column a: hover {
-	color: #ffffff;
-	transform: translateX(4px);
+    color: #5DD5FF;
+
+    text-shadow:
+        0 0 8px rgba(93, 213, 255, 0.5);
 }
 
+
+/* =========================================
+   BRAND / ADDRESS COLUMN
+========================================= */
+
+.footer-brand {
+
+    position: relative;
+}
+
+
+.footer-brand-bottom {
+
+    margin-top: auto;
+}
+
+
+.footer-brand-bottom p {
+
+    font-size: clamp(13px, 1vw, 18px);
+
+    line-height: 1.35;
+}
+
+
+.footer-brand-bottom a {
+
+    color: #5DD5FF;
+
+    text-decoration: underline;
+
+    font-size: clamp(13px, 1vw, 18px);
+}
+
+
+/* =========================================
+   LOWER FOOTER
+========================================= */
+
+.footer-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr
+        1.4fr
+        1.9fr;
+
+    gap: clamp(14px, 1.5vw, 28px);
+
+    margin-top: 15px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   SUBSCRIBE
+========================================= */
+
+.footer-subscribe {
+
+    min-height: 95px;
+
+    display: flex;
+    align-items: center;
+
+    border-right: 1px solid rgba(255,255,255,0.12);
+
+    padding: 0 16px;
+}
+
+
+.subscribe-button {
+
+    width: 100%;
+    max-width: 290px;
+
+    height: 62px;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    position: relative;
+
+    font-family: 'digital-7', monospace;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+
+/* bracket corners */
+
+.subscribe-button::before,
+.subscribe-button::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    top: 0;
+}
+
+
+.subscribe-button::before {
+
+    left: 0;
+
+    border-top: 1px solid rgba(255,255,255,0.55);
+    border-left: 1px solid rgba(255,255,255,0.55);
+}
+
+
+.subscribe-button::after {
+
+    right: 0;
+
+    border-top: 1px solid rgba(255,255,255,0.55);
+    border-right: 1px solid rgba(255,255,255,0.55);
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.footer-copyright {
+
+    border: 2px solid #00FE2A;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    min-height: 95px;
+
+    font-size: clamp(13px, 1vw, 18px);
+}
+
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.footer-social {
+
+    border: 2px solid #00FE2A;
+
+    min-height: 95px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(10px, 1.5vw, 24px);
+
+    padding: 12px 18px;
+}
+
+
+.footer-social a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: clamp(13px, 1.3vw, 23px);
+}
 #mesh-container {
 	position: absolute;
 	inset: 0;
