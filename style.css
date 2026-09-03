@@ -512,12 +512,10 @@ h2 {
 ========================================= */
 
 .area-4 {
-    grid-area: area4;
-
+    
+	grid-area: area4;
     display: block;
-
     padding: 0;
-
     border: none;
 }
 
@@ -529,10 +527,8 @@ h2 {
 .site-footer {
 
     width: 100%;
-
     display: flex;
     flex-direction: column;
-
     color: white;
 }
 
@@ -544,28 +540,22 @@ h2 {
 .footer-top {
 
     display: grid;
-
     grid-template-columns:
         1.35fr
         1fr
         1fr
         1fr;
-
     gap: clamp(18px, 2vw, 46px);
-
     min-height: 265px;
 }
 
 
 .footer-column {
 
-    border: 2px solid #00FE2A;
-
+    border: 0px solid #00FE2A;
     padding: 12px 14px;
-
     display: flex;
     flex-direction: column;
-
     gap: 26px;
 }
 
@@ -573,11 +563,8 @@ h2 {
 .footer-column a {
 
     color: rgba(255, 255, 255, 0.22);
-
     text-decoration: none;
-
     font-size: clamp(13px, 1vw, 18px);
-
     transition:
         color 0.2s ease,
         text-shadow 0.2s ease;
@@ -587,7 +574,6 @@ h2 {
 .footer-column a:hover {
 
     color: #5DD5FF;
-
     text-shadow:
         0 0 8px rgba(93, 213, 255, 0.5);
 }
@@ -612,7 +598,6 @@ h2 {
 .footer-brand-bottom p {
 
     font-size: clamp(13px, 1vw, 18px);
-
     line-height: 1.35;
 }
 
@@ -620,9 +605,7 @@ h2 {
 .footer-brand-bottom a {
 
     color: #5DD5FF;
-
     text-decoration: underline;
-
     font-size: clamp(13px, 1vw, 18px);
 }
 
@@ -634,16 +617,12 @@ h2 {
 .footer-bottom {
 
     display: grid;
-
     grid-template-columns:
         1.35fr
         1.4fr
         1.9fr;
-
     gap: clamp(14px, 1.5vw, 28px);
-
     margin-top: 15px;
-
     align-items: stretch;
 }
 
@@ -655,12 +634,9 @@ h2 {
 .footer-subscribe {
 
     min-height: 95px;
-
     display: flex;
     align-items: center;
-
-    border-right: 1px solid rgba(255,255,255,0.12);
-
+    border-right: 0px solid rgba(255,255,255,0.12);
     padding: 0 16px;
 }
 
@@ -669,23 +645,14 @@ h2 {
 
     width: 100%;
     max-width: 290px;
-
     height: 62px;
-
     background: transparent;
-
     color: white;
-
     border: none;
-
     position: relative;
-
     font-family: 'digital-7', monospace;
-
     font-size: 18px;
-
     letter-spacing: 2px;
-
     cursor: pointer;
 }
 
@@ -696,12 +663,9 @@ h2 {
 .subscribe-button::after {
 
     content: "";
-
     position: absolute;
-
     width: 9px;
     height: 9px;
-
     top: 0;
 }
 
@@ -709,18 +673,16 @@ h2 {
 .subscribe-button::before {
 
     left: 0;
-
-    border-top: 1px solid rgba(255,255,255,0.55);
-    border-left: 1px solid rgba(255,255,255,0.55);
+    border-top: 0px solid rgba(255,255,255,0.55);
+    border-left: 0px solid rgba(255,255,255,0.55);
 }
 
 
 .subscribe-button::after {
 
     right: 0;
-
-    border-top: 1px solid rgba(255,255,255,0.55);
-    border-right: 1px solid rgba(255,255,255,0.55);
+    border-top: 0px solid rgba(255,255,255,0.55);
+    border-right: 0px solid rgba(255,255,255,0.55);
 }
 
 
@@ -730,18 +692,13 @@ h2 {
 
 .footer-copyright {
 
-    border: 2px solid #00FE2A;
-
+    border: 0px solid #00FE2A;
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     min-height: 95px;
-
     font-size: clamp(13px, 1vw, 18px);
 }
 
@@ -752,14 +709,11 @@ h2 {
 
 .footer-social {
 
-    border: 2px solid #00FE2A;
-
+    border: 0px solid #00FE2A;
     min-height: 95px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: clamp(10px, 1.5vw, 24px);
 
     padding: 12px 18px;
@@ -769,11 +723,8 @@ h2 {
 .footer-social a {
 
     color: white;
-
     text-decoration: none;
-
     font-weight: 700;
-
     font-size: clamp(13px, 1.3vw, 23px);
 }
 #mesh-container {
