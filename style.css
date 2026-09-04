@@ -607,14 +607,12 @@ h2 {
         1.4fr
         1.9fr;
     gap: clamp(14px, 1.5vw, 28px);
-    margin-top: 15px;
+    margin-top: 15px, 15px, 15px;
     align-items: stretch;
 }
 
 
-/* =========================================
-   SUBSCRIBE
-========================================= */
+/* ================================================ SUBSCRIPTION ================================================ */
 
 .footer-subscribe {
     min-height: 95px;
@@ -623,7 +621,6 @@ h2 {
     border-right: 0px solid rgba(255,255,255,0.12);
     padding: 0 16px;
 }
-
 
 .subscribe-button {
     width: 100%;
