@@ -526,7 +526,7 @@ h2 {
 }
 
 
-/* ============================================== FOOTER FRAME ============================================== */
+/* ================================================= FOOTER FRAME ================================================= */
 
 .site-footer {
     width: 100%;
@@ -549,7 +549,6 @@ h2 {
     min-height: 265px;
 }
 
-
 .footer-column {
     border: 0px solid #00FE2A;
     padding: 12px 14px;
@@ -557,7 +556,6 @@ h2 {
     flex-direction: column;
     gap: 26px;
 }
-
 
 .footer-column a {
     color: rgba(255, 255, 255, 0.22);
@@ -568,13 +566,11 @@ h2 {
         text-shadow 0.2s ease;
 }
 
-
 .footer-column a:hover {
     color: #5DD5FF;
     text-shadow:
         0 0 8px rgba(93, 213, 255, 0.5);
 }
-
 
 /* ============================================ WORDMARK / LOCATIONS ============================================ */
 
@@ -650,20 +646,18 @@ h2 {
 
 .subscribe-button::before {
     left: 0;
-    border-top: 0px solid rgba(255,255,255,0.55);
-    border-left: 0px solid rgba(255,255,255,0.55);
+    border-top: 5px solid rgba(255,255,255,0.55);
+    border-left: 5px solid rgba(255,255,255,0.55);
 }
 
 .subscribe-button::after {
     right: 0;
-    border-top: 0px solid rgba(255,255,255,0.55);
-    border-right: 0px solid rgba(255,255,255,0.55);
+    border-top: 10px solid rgba(255,255,255,0.55);
+    border-right: 10px solid rgba(255,255,255,0.55);
 }
 
 
-/* =========================================
-   COPYRIGHT
-========================================= */
+/* ================================================= COPYRIGHT ================================================= */
 
 .footer-copyright {
     border: 0px solid #00FE2A;
@@ -671,7 +665,7 @@ h2 {
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     min-height: 95px;
     font-size: clamp(13px, 1vw, 18px);
 }
