@@ -590,7 +590,7 @@ f1 {
 
 .footer-brand-bottom p {
     font-size: clamp(13px, 1vw, 18px);
-    line-height: 1.35;
+    line-height: 1.10;
 }
 
 .footer-brand-bottom a {
