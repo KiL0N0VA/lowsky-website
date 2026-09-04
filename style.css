@@ -546,7 +546,7 @@ h2 {
         1fr
         1fr;
     gap: clamp(18px, 2vw, 46px);
-    min-height: 265px;
+    min-height: 225px;
 }
 
 .footer-column {
