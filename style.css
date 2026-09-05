@@ -564,7 +564,7 @@ f1 {
 }
 
 .footer-column a {
-    color: rgba(255, 255, 255, 0.22);
+    color: #222224;
     text-decoration: none;
     font-size: clamp(13px, 1vw, 18px);
     transition:
