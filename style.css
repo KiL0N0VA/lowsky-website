@@ -653,21 +653,21 @@ f1 {
 
 .subscribe-button::before {
     left: 0;
-    border-top: 5px solid rgba(255,255,255,0.55);
-    border-left: 5px solid rgba(255,255,255,0.55);
+    border-top: 5px solid #D4D4D4;
+    border-left: 5px solid #D4D4D4;
 }
 
 .subscribe-button::after {
     right: 0;
-    border-top: 10px solid rgba(255,255,255,0.55);
-    border-right: 10px solid rgba(255,255,255,0.55);
+    border-top: 5px solid #D4D4D4;
+    border-right: 5px solid #D4D4D4;
 }
 
 
 /* ================================================= COPYRIGHT ================================================= */
 
 .footer-copyright {
-    border: 0px solid #00FE2A;
+    border: 0px solid #D4D4D4;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -693,7 +693,7 @@ f1 {
 .footer-social a {
     color: white;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
     font-size: clamp(13px, 1.3vw, 23px);
 }
 
