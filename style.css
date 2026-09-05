@@ -558,7 +558,7 @@ f1 {
 }
 
 .footer-column {
-    border: 0px solid #00FE2A;
+    /* border: 0px solid #00FE2A; */
     padding: 12px 14px;
     display: flex;
     flex-direction: column;
@@ -622,7 +622,7 @@ f1 {
     min-height: 95px;
     display: flex;
     align-items: center;
-    border-right: 0px solid rgba(255,255,255,0.12);
+    /* border: 0px solid #00FE2A; */
     padding: 0 16px;
 }
 
@@ -669,7 +669,7 @@ f1 {
 /* ================================================= COPYRIGHT ================================================= */
 
 .footer-copyright {
-    border: 0px solid #D4D4D4;
+    /* border: 0px solid #00FE2A; */
     display: flex;
     flex-direction: column;
     align-items: left;
