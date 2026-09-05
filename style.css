@@ -608,8 +608,8 @@ f1 {
     display: grid;
     grid-template-columns:
         1.35fr
-        1.4fr
-        1.9fr;
+        1.8fr
+        1.5fr;
     gap: clamp(14px, 1.5vw, 28px);
     margin-top: 15px, 15px, 15px;
     align-items: stretch;
@@ -636,8 +636,9 @@ f1 {
     position: relative;
     font-family: 'digital-7', monospace;
     font-size: 18px;
-    letter-spacing: 2px;
-    cursor: pointer;
+    letter-spacing: 3px;
+	/* changes the style of the cursor to provide feedback to the user when they hover over the button */
+    cursor: pointer; 
 }
 
 
@@ -647,8 +648,8 @@ f1 {
 .subscribe-button::after {
     content: "";
     position: absolute;
-    width: 9px;
-    height: 9px;
+    width: 2px;
+    height: 2px;
     top: 0;
 }
 
