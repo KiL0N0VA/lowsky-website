@@ -608,8 +608,8 @@ f1 {
     display: grid;
     grid-template-columns:
         1.35fr
-        1.8fr
-        1.5fr;
+        2.2fr
+        1.1fr;
     gap: clamp(14px, 1.5vw, 28px);
     margin-top: 15px, 15px, 15px;
     align-items: stretch;
