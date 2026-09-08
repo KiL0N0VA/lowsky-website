@@ -93,11 +93,6 @@ COLORS:
 /* ===================================================================== PAGE FOUNDATION ===================================================================== */
 body {
     min-height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        #380E06 0%,
-        #001218 100%
-    );
     overflow-x: hidden;
 }
 /* ===================== HEADERS ===================== */
@@ -288,6 +283,12 @@ f1 {
     z-index: 10;
 	position: relative;
 	
+    background: linear-gradient(
+        to bottom,
+        #380E06 0%,
+        #001218 100%
+    );
+
     width: min(100%, 2560px);
     height: calc(100vh - 120px);
 
