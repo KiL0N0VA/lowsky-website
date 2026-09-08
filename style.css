@@ -489,11 +489,11 @@ f1 {
 	padding: 10px;
 	overflow: hidden;
 }
-.Text-75x4x2 {
+.Text-76x4x2 {
 	z-index: 18;
 	display: grid;
 	grid-column: 7 / span 4;
-	grid-row: 5 / span 2;
+	grid-row: 6 / span 2;
 	
 	width: 100%;
     height: 100%;
