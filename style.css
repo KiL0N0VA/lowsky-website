@@ -557,6 +557,7 @@ f1 {
     display: block;
     padding: 0;
     border: none;
+	background-color: #000000;
 	font-family: var(--font-exo);
 	overflow: hidden;
 }
