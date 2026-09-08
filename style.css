@@ -607,9 +607,9 @@ f1 {
 .footer-bottom {
     display: grid;
     grid-template-columns:
-        1.1fr
-        2.45fr
-        1.1fr;
+        1.0fr
+        2.65fr
+        1.0fr;
     gap: clamp(14px, 1.5vw, 28px);
     margin-top: 15px, 15px, 15px;
     align-items: stretch;
