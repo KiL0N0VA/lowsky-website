@@ -102,7 +102,7 @@ body {
 }
 /* ===================== HEADERS ===================== */
 p {
-	font-size: clamp(14px, 1.2vw, 30px);
+	font-size: clamp(14px, 1.2vw, 22px);
 	font-style: normal; 
 	font-weight: 550; 
 	font-family: 'Aptos', sans-serif; 
@@ -110,7 +110,7 @@ p {
 }
 
 h1 { 
-	font-size: clamp(26px, 1.2vw, 36px);
+	font-size: clamp(26px, 1.2vw, 30px);
 	font-style: normal; 
 	font-weight: 550; 
 	font-family: 'Aptos', sans-serif; 
@@ -130,7 +130,7 @@ h2 {
 }
 
 f1 { 
-	font-size: clamp(12px, 1.2vw, 28px);
+	font-size: clamp(12px, 1.2vw, 24px);
 	font-style: normal; 
 	font-weight: 300; 
 	color: #0E0E0F;
