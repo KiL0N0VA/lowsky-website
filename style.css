@@ -104,7 +104,7 @@ body {
 p {
 	font-size: clamp(14px, 1.2vw, 22px);
 	font-style: normal; 
-	font-weight: 550; 
+	font-weight: 250; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
 }
