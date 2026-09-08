@@ -377,11 +377,11 @@ f1 {
 	padding: 10px;
 	overflow: hidden;
 }
-.Ani-61x5x5 {
+.Ani-62x5x5 {
 	z-index: 16;
 	display: grid;	
 	grid-column: 6 / span 5;
-	grid-row: 1 / span 5;
+	grid-row: 2 / span 5;
 
 	width: 100%;
     height: 100%;
