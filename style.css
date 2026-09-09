@@ -616,7 +616,7 @@ f1 {
 }
 
 .footer-column a {
-    color: #121212;
+    color: #4D4D4D;
     text-decoration: none;
     font-size: clamp(12px, 1vw, 18px);
     transition:
@@ -726,7 +726,7 @@ f1 {
     justify-content: center;
     text-align: left;
     min-height: 95px;
-    font-size: clamp(13px, 1vw, 18px);
+    font-size: clamp(10px, 1vw, 16px);
 }
 
 
@@ -746,12 +746,12 @@ f1 {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: clamp(13px, 1.3vw, 23px);
+    font-size: clamp(10px, 1.3vw, 18px);
 }
 
 .footer-social img {
-	width: 24px;
-	height: 24px;
+	width: 32px;
+	height: 32px;
 	object-fit: contain;
 	display: block;
 }
