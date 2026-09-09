@@ -152,11 +152,12 @@ f1 {
 /* ===================== LOGO ===================== */
 .nav-logo-link {
     z-index: 25;
-	margin-top: 15px;
 	grid-column: 1 / span 2;
 	display: inline;
-    justify-self: center;
-    align-self: center;
+	justify-content: center;
+	align-items: center;
+	justify-self: center;
+	align-self: center;
 }
 .nav-logo {
 	width: clamp(32px, 2.4vw, 72px);
@@ -292,7 +293,7 @@ f1 {
     width: min(100%, 2560px);
     height: calc(100vh - 120px);
 
-    margin: 10px auto;
+    margin: 7px auto;
 	
     display: grid;
     grid-template-columns:
