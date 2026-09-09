@@ -168,7 +168,7 @@ f1 {
 /* ===================== NAV TABLE ===================== */ 
 .nav-table {
     z-index: 25;
-    margin-top: 15px; 
+    margin-top: 5px; 
 	grid-column: 3 / span 8;  
 	justify-self: center;
 	align-self: center;
