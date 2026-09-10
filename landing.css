@@ -1,0 +1,294 @@
+/* =====================================================================
+   LOWSKY HORIZONTAL COMPASS NAVIGATION
+   ===================================================================== */
+
+.compass-nav {
+    --compass-height: 86px;
+
+    --letter-size: clamp(26px, 2.5vw, 42px);
+    --dot-size: 8px;
+
+    --letter-gap: clamp(18px, 2vw, 34px);
+
+    --compass-color: #ffffff;
+    --compass-muted: rgba(255, 255, 255, 0.42);
+
+    --mhm-color: #00FE2A;
+
+    position: relative;
+
+    width: 100%;
+    height: var(--compass-height);
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    user-select: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 18, 24, 0.96),
+            rgba(0, 18, 24, 0.82)
+        );
+
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+
+    cursor: crosshair;
+}
+
+
+/* ---------------------------------------------------------------------
+   VIEWPORT
+   --------------------------------------------------------------------- */
+
+.compass-viewport {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* ---------------------------------------------------------------------
+   MOVING TRACK
+   --------------------------------------------------------------------- */
+
+.compass-track {
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    transform:
+        translate3d(0, -50%, 0);
+
+    will-change: transform;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------------------
+   INDIVIDUAL BEARING GROUP
+   --------------------------------------------------------------------- */
+
+.compass-bearing-group {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------------------
+   MAIN NAVIGATION LETTERS
+   --------------------------------------------------------------------- */
+
+.compass-bearing {
+    --magnification: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: clamp(50px, 5vw, 82px);
+    height: var(--compass-height);
+
+    flex-shrink: 0;
+
+    font-family: 'digital-7', monospace;
+
+    font-size: var(--letter-size);
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: var(--compass-color);
+
+    text-decoration: none;
+
+    opacity: 0.72;
+
+    transform:
+        scale(var(--magnification));
+
+    transform-origin: center center;
+
+    transition:
+        opacity 120ms linear,
+        color 120ms linear,
+        text-shadow 120ms linear;
+
+    position: relative;
+}
+
+
+/* Bearing directly beneath MHM */
+
+.compass-bearing.is-active {
+    opacity: 1;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 8px rgba(0, 254, 42, 0.30),
+        0 0 18px rgba(0, 254, 42, 0.14);
+}
+
+
+/* ---------------------------------------------------------------------
+   DEGREE DOTS
+   --------------------------------------------------------------------- */
+
+.degree-dots {
+    display: flex;
+    align-items: center;
+
+    gap: var(--letter-gap);
+
+    padding-inline: calc(var(--letter-gap) * 0.65);
+
+    flex-shrink: 0;
+}
+
+
+.degree-dot {
+    display: block;
+
+    width: var(--dot-size);
+    height: var(--dot-size);
+
+    border-radius: 50%;
+
+    background: var(--compass-muted);
+
+    flex-shrink: 0;
+}
+
+
+/* OPTIONAL: middle graduation slightly stronger */
+
+.degree-dot.major {
+    width: calc(var(--dot-size) * 1.25);
+    height: calc(var(--dot-size) * 1.25);
+
+    background: rgba(255,255,255,0.66);
+}
+
+
+/* =====================================================================
+   MAGNIFYING HEADING MARKER — MHM
+   ===================================================================== */
+
+.mhm {
+    position: absolute;
+
+    z-index: 20;
+
+    top: 0;
+    left: 50%;
+
+    width: 70px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Vertical heading reference */
+
+.mhm-line {
+    position: absolute;
+
+    top: 8px;
+    bottom: 8px;
+
+    left: 50%;
+
+    width: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--mhm-color) 24%,
+            var(--mhm-color) 76%,
+            transparent
+        );
+
+    opacity: 0.5;
+}
+
+
+/* Downward heading pointer */
+
+.mhm-pointer {
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    transform: translateX(-50%);
+
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid var(--mhm-color);
+
+    filter:
+        drop-shadow(0 0 5px rgba(0, 254, 42, 0.55));
+}
+
+
+/* ---------------------------------------------------------------------
+   EDGE FADES
+
+   Makes the compass appear to disappear beyond the instrument viewport.
+   --------------------------------------------------------------------- */
+
+.compass-nav::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 15;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to right,
+
+            rgba(0,18,24,1) 0%,
+            rgba(0,18,24,0.65) 5%,
+            transparent 18%,
+
+            transparent 82%,
+            rgba(0,18,24,0.65) 95%,
+            rgba(0,18,24,1) 100%
+        );
+}
