@@ -123,7 +123,15 @@ h2 {
 	font-family: 'Georgia', serif; 
 	color: #808080;
 }
-
+	
+h3 { 
+	font-size: clamp(26px, 1.2vw, 30px);
+	font-style: normal; 
+	font-weight: 300; 
+	font-family: 'Aptos', sans-serif; 
+	color: #F2F2F2;
+}
+	
 f1 { 
 	font-size: clamp(12px, 1.2vw, 24px);
 	font-style: normal; 
