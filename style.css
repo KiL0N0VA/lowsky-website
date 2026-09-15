@@ -502,10 +502,10 @@ f1 {
 }
 	
 	
-.Text-71x4x2 {
+.Text-65x4x2 {
 	z-index: 18;
 	display: grid;
-	grid-column: 7 / span 4;
+	grid-column: 6 / span 5;
 	grid-row: 2 / span 2;
 
 	width: 100%;
