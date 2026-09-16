@@ -2,7 +2,7 @@
 ** LAYOUT
 	parent = top level attributes
 	child = inherits parent attributes
-	margin: space outside an element, separates elements from other elements (defined by margin)
+	margin: space outside an element, separates elements from other elements (defined by margin) [t,r,b,l] = [top, right, bottom, left]
 	border: space between the outter margin and the inner padding, customizable line or 'frame' that wraps the padding (defined by border)
 	padding: space inside an element, used to increase clickable/visible area without changing content size (defined by padding)
 	content: inner most area with text, images, etc. (defined by width & height)
@@ -11,6 +11,7 @@
 	content-box = sets dimensionalization of content by content-box (no padding, no border, no margin) * DEFAULT
 	border-box = sets dimensionalization of content by border-box (yes padding, yes border, no margin)
 	<div> stack natrually ontop of each other.
+	<br> paragraph break
 
 *** FLEX
 	flex = element is a block-lvel flex container ** MOST COMMON **
@@ -102,6 +103,7 @@ p {
 	font-weight: 250; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
+	margin: 0 0 clamp(2px, 0.6vw, 12px) 0;
 }
 
 h1 { 
@@ -110,10 +112,12 @@ h1 {
 	font-weight: 550; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
+	margin: 0 0 clamp(2px, 0.6vw, 6px) 0;
 }
 
 .h1org { 
 	color: #E95133;
+	margin: 0;
 }
 
 h2 { 
@@ -122,6 +126,7 @@ h2 {
 	font-weight: 150; 
 	font-family: 'Georgia', serif; 
 	color: #808080;
+	margin: 0 0 0 0;
 }
 	
 h3 { 
@@ -130,6 +135,7 @@ h3 {
 	font-weight: 300; 
 	font-family: 'Aptos', sans-serif; 
 	color: #F2F2F2;
+	margin: 0 0 clamp(2px, 0.6vw, 4px) 0;
 }
 	
 f1 { 
@@ -137,6 +143,7 @@ f1 {
 	font-style: normal; 
 	font-weight: 300; 
 	color: #696969;
+	margin: 0 0 0 0;
 }
 
 /* ===================================================================================================================================================== */
