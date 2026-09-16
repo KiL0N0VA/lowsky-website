@@ -488,10 +488,10 @@ f1 {
 	padding: 10px;
 	overflow: hidden;
 }
-.Text-36x5x2 {
+.Text-36x8x2 {
 	z-index: 18;
 	display: grid;
-	grid-column: 3 / span 5;
+	grid-column: 3 / span 8;
 	grid-row: 6 / span 2;
 
 	width: 100%;
