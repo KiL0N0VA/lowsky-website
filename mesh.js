@@ -64,7 +64,8 @@ resize();
 const radius = 80;
 // RINGS RUN AROUND THE LATITUDE
 const rings = 20;
-const segments = 40;
+// 
+const segments = 5;
 
 const points = [];
 
