@@ -535,11 +535,11 @@ f1 {
 	padding: 10px;
 	overflow: hidden;
 }
-.Text-c37r58 {
+.Map-c357r469 {
 	z-index: 18;
 	display: grid;
 	grid-column: 3 / span 5;
-	grid-row: 5 / span 4;
+	grid-row: 4 / span 6;
 	
 	width: 100%;
     height: 100%;
@@ -548,11 +548,11 @@ f1 {
 	padding: 10px;
 	overflow: hidden;
 }
-.Text-c810r58 {
+.Map-c8310r469 {
 	z-index: 18;
 	display: grid;
 	grid-column: 8 / span 3;
-	grid-row: 5 / span 4;
+	grid-row: 4 / span 6;
 	
 	width: 100%;
     height: 100%;
