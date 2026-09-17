@@ -111,9 +111,7 @@ function project(point) {
 
     // Perspective
     const depth = 450;
-
-    const perspective =
-        depth / (depth + z);
+    const perspective = depth / (depth + z);
 
     return {
         x: cx + x * perspective,
