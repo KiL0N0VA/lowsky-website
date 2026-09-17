@@ -535,16 +535,29 @@ f1 {
 	padding: 10px;
 	overflow: hidden;
 }
-.Text-76x4x2 {
+.Text-c37r58 {
 	z-index: 18;
 	display: grid;
-	grid-column: 7 / span 4;
-	grid-row: 6 / span 2;
+	grid-column: 3 / span 5;
+	grid-row: 5 / span 4;
 	
 	width: 100%;
     height: 100%;
 	text-align: right;
-	border: 0px solid #FFFB08;
+	border: 1px solid #FFFB08;
+	padding: 10px;
+	overflow: hidden;
+}
+.Text-c810r58 {
+	z-index: 18;
+	display: grid;
+	grid-column: 8 / span 3;
+	grid-row: 5 / span 4;
+	
+	width: 100%;
+    height: 100%;
+	text-align: right;
+	border: 1px solid #DDDB08;
 	padding: 10px;
 	overflow: hidden;
 }
