@@ -61,11 +61,12 @@ resize();
 // Generate points on a spherical surface
 // ==================================================
 
-const radius = 80;
-// RINGS RUN AROUND THE LATITUDE
-const rings = 20;
-// 
-const segments = 5;
+// OVERALL VOLUMETRIC SIZE OF GLOBE
+const radius = 100;
+// BELTS RUN AROUND THE LATITUDE (how FAT-itude are the rungs, FATTEST @ ZERO)
+const rings = 15;
+// STRAPS RUN AROUND THE LONGITUDE (how LONG straps are from south hemi to north hemi, LONGEST @ 180)
+const segments = 30;
 
 const points = [];
 
