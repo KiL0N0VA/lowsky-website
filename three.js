@@ -1,196 +1,808 @@
-/* AUTOMATED-GROUND NAVIGATION */
+/* ========================================================================== */
+/* AUTOMATED-GROUND NAVIGATION                                                */
+/* THREE.JS TERRAIN RENDERING ENGINE                                          */
+/* ========================================================================== */
 
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
+/*
+	three.js
 
-const MAPBOX_TOKEN = "YOUR_MAPBOX_PUBLIC_ACCESS_TOKEN";
-const terrainConfig = {
-	latitude: 51.1784,
-	longitude: -115.5708,
-	areaKM: 10,
-	detail: 128,
-	verticalScale: 1.0,
-	displaySize: 100
-};
+	PURPOSE:
 
-/* =========== INPUT PARAMETER CONTROLS ======================================================================================================== */
+	This file does NOT generate terrain.
 
-function readTerrainControls(){
+	It receives terrain data from terrain.js and handles:
 
-	terrainConfig.latitude=parseFloat(document.getElementById("latitude").value);
-	terrainConfig.longitude=parseFloat(document.getElementById("longitude").value);
-	terrainConfig.areaKM=parseFloat(document.getElementById("area").value);
-	terrainConfig.detail=parseInt(document.getElementById("detail").value);
-	terrainConfig.verticalScale=parseFloat(document.getElementById("verticalScale").value);
+		1. Three.js scene
+		2. Camera
+		3. WebGL renderer
+		4. Terrain geometry
+		5. Terrain material
+		6. Scene placement
+		7. Animation
+		8. Responsive resizing
+
+
+	DATA FLOW:
+
+	terrain.js
+	    ↓
+	elevationGrid
+	    ↓
+	three.js
+	    ↓
+	PlaneGeometry
+	    ↓
+	WebGL
+*/
+
+
+import * as THREE from
+	"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
+
+
+import {
+	terrainConfig,
+	generateTerrainData
+}
+from "./terrain.js";
+
+
+/* ========================================================================== */
+/* HTML CONTAINER                                                             */
+/* ========================================================================== */
+
+const container =
+	document.getElementById(
+		"terrain-container"
+	);
+
+
+if (!container) {
+
+	throw new Error(
+		'Missing HTML element: id="terrain-container".'
+	);
 }
 
-/* =========== GEOGRAPHIC BOUNDS ======================================================================================================== */
-/* one degree latitude ~= to 111.32 km */
-/* longitude changes with latitude ~= 111.32*cos(phi) */
-/* REAL WORLD (λ,φ,h) becomes DIGITAL WORLD (x,y,z) */
 
-function calculateBounds(latitude,longitude,areaKM){
-	const halfArea = areaKM/2;
-	const latDEG = halfArea / 111.32; 
-	const lonDEG = halfArea/(111.32*Math.cos(THREE.MathUtils.degToRad(latitude)));
-	
-	return {north: latitude + latDEG,south: latitude - latDEG,east: longitude + lonDEG,west: longitude - lonDEG
-	};
-}
+/* ========================================================================== */
+/* THREE.JS SCENE                                                             */
+/* ========================================================================== */
 
-/* =========== MAPBOX CONVERSION ======================================================================================================== */
-/* Mapbox terrain is divided into XYZ map tiles */
-
-function lonToTileX(lon, zoom){
-	
-	return Math.floor(((lon+180)/360)*Math.pow(2,zoom));
-}
-function latToTileY(lat, zoom){
-	const latRad = THREE.MathUtils.degToRad(lat);
-
-	return Math.floor((1-Math.log(Math.tan(latRad)+1/Math.cos(latRad))/Math.PI)/2*Math.pow(2,zoom));
-}
-function lonToTileXFloat(lon,zoom){
-
-	return ((lon+180)/360*Math.pow(2,zoom));
-}
-function latToTileYFloat(lat,zoom){
-	const latRad=THREE.MathUtils.degToRad(lat);
-	
-	return ((1-Math.log(Math.tan(latRad)+1/Math.cos(latRad))/Math.PI)/2*Math.pow(2,zoom));
-}
+const scene =
+	new THREE.Scene();
 
 
-/* =========== DEM TILE RETRIEVAL  ======================================================================================================= */
+scene.background =
+	new THREE.Color(
+		0x101416
+	);
 
-async function loadDEMTile(zoom,tileX,tileY){
-	
-	const url = `https://api.mapbox.com/v4/mapbox.terrain-rgb/`+`${zoom}/${tileX}/${tileY}.pngraw`+`?access_token=${MAPBOX_TOKEN}`;
-	const image = new Image();
-	image.crossOrigin = "anonymous";
-	
-	return new Promise((resolve,reject)=>{
-		const canvas = document.createElement("canvas");
-		canvas.width = image.width;
-		canvas.height = image.height;
-		const context = canvas.getContext("2d",{willReadFrequently:true});
-		context.drawImage(image,0,0);
-		const imageData = context.getImageData(0,0,image.width,image.height);
 
-		resolve({width: image.width,height: image.height,pixels: imageData.data});
-	};
-	
-	image.onerror = reject;
-	image.src = url;
-	}
+/* ========================================================================== */
+/* CAMERA                                                                     */
+/* ========================================================================== */
+
+const camera =
+	new THREE.PerspectiveCamera(
+
+		40,
+
+		Math.max(
+			container.clientWidth,
+			1
+		)
+		/
+		Math.max(
+			container.clientHeight,
+			1
+		),
+
+		0.1,
+
+		2000
+	);
+
+
+/*
+	Temporary initial position.
+
+	frameTerrain() will reposition the camera once
+	the actual terrain geometry exists.
+*/
+
+camera.position.set(
+	0,
+	-100,
+	70
 );
-}
 
-function decodeElevation(r,g,b){
 
-	return (-10000+(r*256*256+g*256+b)*0.1);
-}
+camera.lookAt(
+	0,
+	0,
+	0
+);
 
-function getPixelElevation(dem,x,y){
 
-	const index = (y*dem.width+x)*4;
-	const r = dem.pixels[index];
-	const g = dem.pixels[index+1];
-	const b = dem.pixels[index+2];
+/* ========================================================================== */
+/* WEBGL RENDERER                                                             */
+/* ========================================================================== */
 
-	return decodeElevation(r,g,b);
-}
+const renderer =
+	new THREE.WebGLRenderer({
 
-const container = document.getElementById("terrain-container");
-const scene = new THREE.Scene();
-	scene.background = new THREE.Color(0x000000);
-const camera = new THREE.PerspectiveCamera(38,container.clientWidth / container.clientHeight,0.1,1000);
+		antialias: true,
 
-camera.position.set(0,-95,70);
-camera.lookAt(0,0,5);
+		alpha: false
+	});
 
-/* =========== RENDERER  ======================================================================================================= */
-
-const renderer = new THREE.WebGLRenderer({
-	antialias: true,
-	alpha: false
-});
 
 renderer.setPixelRatio(
-	Math.min(window.devicePixelRatio, 2)
+
+	Math.min(
+		window.devicePixelRatio || 1,
+		2
+	)
 );
+
+
 renderer.setSize(
-	container.clientWidth,
-	container.clientHeight
+
+	Math.max(
+		container.clientWidth,
+		1
+	),
+
+	Math.max(
+		container.clientHeight,
+		1
+	)
 );
-container.appendChild(renderer.domElement);
 
-/* =========== DEM TERRAIN GEN ================================================================================================= */
 
-function createTerrainFromDEM(elevationGrid,detail,displaySize,verticalScale,areaKM){
+container.appendChild(
+	renderer.domElement
+);
 
-	const geometry = new THREE.PlaneGeometry(displaySize,displaySize,detail-1,detail-1);
-	const positions = geometry.attributes.position;
-	let minElevation = Infinity;
-	let maxElevation = Infinity;
 
-	for(const elevation of elevationGrid){
-		minElevation = Math.min(minElevation,elevation);
-		maxElevation = Math.max(maxElevation,elevation);
+/* ========================================================================== */
+/* TERRAIN OBJECT STATE                                                       */
+/* ========================================================================== */
+
+let terrainMesh = null;
+
+let terrainUnderlay = null;
+
+
+/* ========================================================================== */
+/* CREATE TERRAIN GEOMETRY                                                    */
+/* ========================================================================== */
+
+/*
+	terrainData must contain:
+
+	{
+		elevationGrid,
+		detail,
+		areaKm,
+		elevationGridMax
 	}
-	const metresPerSceneUnit = (terrainConfig.areaKM*1000)/terrainConfig.displaySize;
-	const sceneElevation = (elevation-minElevation)/metresPerSceneUnit*verticalScale;
 
-	for(let i=0;i<positions.count;i++){
-		const elevation = elevationGrid[i];
-		const relativeElevation = elevation - minElevation;
-		positions.setZ(i,relativeElevation*verticalScale);
+
+	The elevation grid contains elevations in metres.
+
+	The horizontal terrain dimensions are derived from areaKm.
+
+	Example:
+
+		areaKm = 100 km²
+
+		side length:
+
+			sqrt(100) = 10 km
+
+			= 10,000 metres
+
+
+	If displaySize = 100 scene units:
+
+		10,000 m / 100 units
+		=
+		100 metres per scene unit.
+*/
+
+
+function createTerrainGeometry(
+	terrainData
+) {
+
+	const elevationGrid =
+		terrainData.elevationGrid;
+
+
+	const detail =
+		terrainData.detail;
+
+
+	const areaKm =
+		terrainData.areaKm;
+
+
+	const displaySize =
+		terrainConfig.displaySize;
+
+
+	const verticalScale =
+		terrainConfig.verticalScale;
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Validate terrain data                                                  */
+	/* ---------------------------------------------------------------------- */
+
+	if (
+		!elevationGrid ||
+		elevationGrid.length !==
+			detail * detail
+	) {
+
+		throw new Error(
+
+			"Invalid terrain elevation grid. " +
+
+			`Expected ${detail * detail} samples, ` +
+
+			`received ${elevationGrid?.length ?? 0}.`
+		);
 	}
-	positions.needsUpdate=true;
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Convert total area into side length                                    */
+	/* ---------------------------------------------------------------------- */
+
+	const terrainSideKm =
+		Math.sqrt(
+			areaKm
+		);
+
+
+	const terrainSideMetres =
+		terrainSideKm *
+		1000;
+
+
+	const metresPerSceneUnit =
+
+		terrainSideMetres
+
+		/
+
+		displaySize;
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Create XY plane                                                        */
+	/* ---------------------------------------------------------------------- */
+
+	const geometry =
+		new THREE.PlaneGeometry(
+
+			displaySize,
+
+			displaySize,
+
+			detail - 1,
+
+			detail - 1
+		);
+
+
+	const positions =
+		geometry.attributes.position;
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Apply elevations                                                       */
+	/* ---------------------------------------------------------------------- */
+
+	for (
+		let row = 0;
+		row < detail;
+		row++
+	) {
+
+		for (
+			let column = 0;
+			column < detail;
+			column++
+		) {
+
+			const index =
+				row *
+				detail +
+				column;
+
+
+			const elevationMetres =
+				elevationGrid[
+					index
+				];
+
+
+			const sceneElevation =
+
+				(
+					elevationMetres
+
+					/
+
+					metresPerSceneUnit
+				)
+
+				*
+
+				verticalScale;
+
+
+			positions.setZ(
+				index,
+				sceneElevation
+			);
+		}
+	}
+
+
+	positions.needsUpdate =
+		true;
+
+
 	geometry.computeVertexNormals();
 
-	return {geometry,minElevation,maxElevation};
+	geometry.computeBoundingBox();
+
+	geometry.computeBoundingSphere();
+
+
+	return geometry;
 }
 
 
-document
-	.getElementById("generateTerrain")
-	.addEventListener("click",generateTerrain);
+/* ========================================================================== */
+/* TERRAIN WIREFRAME MATERIAL                                                 */
+/* ========================================================================== */
 
-async function generateTerrain(){
+function createTerrainMaterial() {
 
-	readTerrainControls();
-	const bounds = calculateBounds(terrainConfig.latitude,terrainConfig.longitude,terrainConfig.areaKM);
+	return new THREE.MeshBasicMaterial({
 
-	console.log("Terrain config:",terrainConfig);
-	console.log("Geographic bounds:",bounds);
-	const zoom = 14;
-	const tileX = lonToTileX(terrainConfig.longitude,zoom);
-	const tileY = latToTileY(terrainConfig.latitude,zoom);
-	console.log(`Loading DEM tile: ${zoom}/${tileX}/${tileY}`);
-	const dem = await loadDEMTile(zoom,tileX,tileY);
-	console.log("DEM loaded:",dem.width,"x",dem.height);
+		color:
+			0xb5b52a,
+
+		wireframe:
+			true,
+
+		transparent:
+			true,
+
+		opacity:
+			0.78,
+
+		side:
+			THREE.DoubleSide
+	});
 }
 
 
-/* =========== ANIMATION ======================================================================================================= */
+/* ========================================================================== */
+/* TERRAIN UNDERLAY MATERIAL                                                  */
+/* ========================================================================== */
 
+function createUnderlayMaterial() {
 
-function animate(){
-	requestAnimationFrame(animate);
-	// Slow movement
-	renderer.render(scene,camera);
+	return new THREE.MeshBasicMaterial({
+
+		color:
+			0x080b0c,
+
+		side:
+			THREE.DoubleSide
+	});
 }
+
+
+/* ========================================================================== */
+/* CREATE TERRAIN OBJECTS                                                     */
+/* ========================================================================== */
+
+function createTerrainObjects(
+	terrainData
+) {
+
+	const geometry =
+		createTerrainGeometry(
+			terrainData
+		);
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Solid terrain underlay                                                 */
+	/* ---------------------------------------------------------------------- */
+
+	const underlayGeometry =
+		geometry.clone();
+
+
+	const underlayMaterial =
+		createUnderlayMaterial();
+
+
+	terrainUnderlay =
+		new THREE.Mesh(
+
+			underlayGeometry,
+
+			underlayMaterial
+		);
+
+
+	/*
+		Move underlay very slightly downward to reduce
+		z-fighting between solid and wireframe surfaces.
+	*/
+
+	terrainUnderlay.position.z =
+		-0.015;
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Wireframe                                                              */
+	/* ---------------------------------------------------------------------- */
+
+	const terrainMaterial =
+		createTerrainMaterial();
+
+
+	terrainMesh =
+		new THREE.Mesh(
+
+			geometry,
+
+			terrainMaterial
+		);
+
+
+	scene.add(
+		terrainUnderlay
+	);
+
+
+	scene.add(
+		terrainMesh
+	);
+}
+
+
+/* ========================================================================== */
+/* REMOVE EXISTING TERRAIN                                                    */
+/* ========================================================================== */
+
+function removeTerrain() {
+
+	if (terrainMesh) {
+
+		scene.remove(
+			terrainMesh
+		);
+
+
+		terrainMesh.geometry.dispose();
+
+		terrainMesh.material.dispose();
+
+
+		terrainMesh =
+			null;
+	}
+
+
+	if (terrainUnderlay) {
+
+		scene.remove(
+			terrainUnderlay
+		);
+
+
+		terrainUnderlay.geometry.dispose();
+
+		terrainUnderlay.material.dispose();
+
+
+		terrainUnderlay =
+			null;
+	}
+}
+
+
+/* ========================================================================== */
+/* CAMERA FRAMING                                                             */
+/* ========================================================================== */
+
+function frameTerrain() {
+
+	if (!terrainMesh) {
+
+		return;
+	}
+
+
+	const bounds =
+		new THREE.Box3()
+			.setFromObject(
+				terrainMesh
+			);
+
+
+	const size =
+		new THREE.Vector3();
+
+
+	const center =
+		new THREE.Vector3();
+
+
+	bounds.getSize(
+		size
+	);
+
+
+	bounds.getCenter(
+		center
+	);
+
+
+	const horizontalSize =
+		Math.max(
+			size.x,
+			size.y
+		);
+
+
+	const verticalSize =
+		Math.max(
+			size.z,
+			1
+		);
+
+
+	/*
+		Low oblique perspective.
+
+		This is intentionally closer to your original
+		topographic reference than a top-down map.
+	*/
+
+	camera.position.set(
+
+		center.x,
+
+		center.y -
+			horizontalSize *
+			1.05,
+
+		center.z +
+			horizontalSize *
+			0.58 +
+			verticalSize *
+			0.35
+	);
+
+
+	camera.lookAt(
+
+		center.x,
+
+		center.y,
+
+		center.z +
+			verticalSize *
+			0.10
+	);
+
+
+	camera.near =
+		0.1;
+
+
+	camera.far =
+		Math.max(
+
+			2000,
+
+			horizontalSize *
+			20
+		);
+
+
+	camera.updateProjectionMatrix();
+}
+
+
+/* ========================================================================== */
+/* GENERATE AND LOAD TERRAIN                                                  */
+/* ========================================================================== */
+
+function loadTerrain() {
+
+	console.log(
+		"Generating procedural terrain..."
+	);
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Ask terrain.js for terrain DATA                                        */
+	/* ---------------------------------------------------------------------- */
+
+	const terrainData =
+		generateTerrainData();
+
+
+	console.log(
+		"Terrain data:",
+		terrainData
+	);
+
+
+	console.log(
+
+		"Elevation samples:",
+
+		terrainData.elevationGrid.length
+	);
+
+
+	console.log(
+
+		"Terrain detail:",
+
+		`${terrainData.detail} x ${terrainData.detail}`
+	);
+
+
+	console.log(
+
+		"Terrain area:",
+
+		`${terrainData.areaKm} km²`
+	);
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Remove previous rendered terrain                                       */
+	/* ---------------------------------------------------------------------- */
+
+	removeTerrain();
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Convert data into Three.js objects                                     */
+	/* ---------------------------------------------------------------------- */
+
+	createTerrainObjects(
+		terrainData
+	);
+
+
+	/* ---------------------------------------------------------------------- */
+	/* Position camera                                                        */
+	/* ---------------------------------------------------------------------- */
+
+	frameTerrain();
+
+
+	console.log(
+		"Terrain rendered successfully."
+	);
+}
+
+
+/* ========================================================================== */
+/* ANIMATION                                                                  */
+/* ========================================================================== */
+
+function animate() {
+
+	requestAnimationFrame(
+		animate
+	);
+
+
+	/*
+		Leave terrain stationary for now.
+
+		Later this is where camera movement,
+		orbiting, route animation, markers,
+		etc. can live.
+	*/
+
+
+	renderer.render(
+		scene,
+		camera
+	);
+}
+
+
+/* ========================================================================== */
+/* RESPONSIVE RESIZING                                                        */
+/* ========================================================================== */
+
+function resizeRenderer() {
+
+	const width =
+		Math.max(
+			container.clientWidth,
+			1
+		);
+
+
+	const height =
+		Math.max(
+			container.clientHeight,
+			1
+		);
+
+
+	camera.aspect =
+		width /
+		height;
+
+
+	camera.updateProjectionMatrix();
+
+
+	renderer.setSize(
+		width,
+		height
+	);
+}
+
+
+window.addEventListener(
+	"resize",
+	resizeRenderer
+);
+
+
+/* ========================================================================== */
+/* INITIALIZATION                                                             */
+/* ========================================================================== */
+
+loadTerrain();
 
 animate();
 
-/* =========== RESPONSIVE RESIZING ================================================================================================ */
 
-window.addEventListener("resize",()=>{
-		const width = container.clientWidth;
-		const height = container.clientHeight;
-		camera.aspect = width/height;
-		camera.updateProjectionMatrix();
-		renderer.setSize(width,height);
-	}
-);
+/* ========================================================================== */
+/* OPTIONAL PUBLIC REGENERATION FUNCTION                                      */
+/* ========================================================================== */
 
+/*
+	This lets another script regenerate the scene later with:
+
+		window.regenerateTerrain();
+
+	For now terrainConfig controls the seed and terrain parameters.
+*/
+
+window.regenerateTerrain =
+	function () {
+
+		loadTerrain();
+	};
+
+
+/* ========================================================================== */
+/* END                                                                        */
+/* ========================================================================== */
