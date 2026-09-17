@@ -855,6 +855,45 @@ f1 {
 	height: 100%;
 	display: block;
 }
+/* ================================================= TERRAIN ================================================= */
+#terrain-controls {
+	display: flex;
+	align-items: end;
+	gap: 18px;
+	padding: 15px 20px;
+	background: #050505;
+	border-bottom: 1px solid #343434;
+	font-family: monospace;
+	color: #b5b52a;
+}
+.control {
+	display: flex:
+	flex-direction: column;
+	gap: 5px;
+}
+.control label {
+	font-size: 11px;
+	text-transform: uppercase;
+}
+.control input,
+.control select {
+	width: 130px;
+	background: #000;
+	color: #b5b52a;
+	border: 1px solid #55551a;
+	padding: 7px;
+	font-family: monospace;
+}
+#generateTerrain {
+	height: 34px;
+	padding: 0 18px;
+	background: #b5b52a;
+	color: #000;
+	border: none;
+	font-family: monospace;
+	font-weight: bold;
+	cursor: pointer;
+}
 #terrain-container {
 	position: relative;
 	width: 100%;
@@ -867,7 +906,6 @@ f1 {
 	width: 100%;
 	height: 100%;
 }
-
 
 /* ============================================================================================================== */
 /* ================================================== PAGE-END ================================================== */
