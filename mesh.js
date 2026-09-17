@@ -61,7 +61,8 @@ resize();
 // Generate points on a spherical surface
 // ==================================================
 
-const radius = 160;
+const radius = 80;
+// RINGS RUN AROUND THE LATITUDE
 const rings = 20;
 const segments = 40;
 
