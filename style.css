@@ -827,24 +827,32 @@ f1 {
 	object-position: center;
 	display: block;
 }
-
 #mesh-container {
 	position: absolute;
 	inset: 0;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-
 /*	transform: translate (-50%,-50%); */
-
 	pinter-events:none;
 	opacity:0.8;
-}
-	
+}	
 #mesh-canvas {
 	width: 100%;
 	height: 100%;
 	display: block;
+}
+#terrain-container {
+	position: relative;
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+	background: #000000;
+}
+#terrain-container canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 
