@@ -10,55 +10,32 @@ import * as THREE from
 /* ========================================================================== */
 /* USER INPUT VARIABLES                                                       */
 /* ========================================================================== */
-
 /*
 	elevationGrid:
 		Maximum intended terrain relief, in metres.
-
-		Recommended:
-		500 - 3000 m
-
-		Hard limit:
-		5000 m
-
+		Recommended: 500 - 3000 m
+		Hard limit: 5000 m
 
 	detail:
 		Number of elevation samples along X and Y.
-
 		64  = low
 		128 = medium
 		256 = high
-
-		Hard limit:
-		512
-
+		Hard limit: 512
 
 	areaKm:
 		TOTAL square terrain area in km².
 
-		Example:
+		Example: areaKm = 100
+		produces: 10 km x 10 km
+		Hard limit: 1000 km²
 
-			areaKm = 100
+	numberMountains: 0 - 10
 
-		produces:
-
-			10 km x 10 km
-
-		Hard limit:
-			1000 km²
-
-
-	numberMountains:
-		0 - 10
-
-
-	numberValleys:
-		0 - 10
-
+	numberValleys: 0 - 10
 
 	randomSeed:
 		Change this number to generate a different terrain.
-
 		Using a seed means the same number always generates
 		the same terrain.
 */
@@ -67,19 +44,12 @@ import * as THREE from
 const terrainConfig = {
 
 	elevationGrid: 1800,
-
 	detail: 128,
-
 	areaKm: 100,
-
 	numberMountains: 5,
-
 	numberValleys: 3,
-
 	randomSeed: 42731,
-
 	displaySize: 100,
-
 	verticalScale: 1.0
 };
 
@@ -91,23 +61,14 @@ const terrainConfig = {
 const LIMITS = {
 
 	minElevationGrid: 100,
-
 	maxElevationGrid: 5000,
-
 	minDetail: 16,
-
 	maxDetail: 512,
-
 	minAreaKm: 1,
-
 	maxAreaKm: 1000,
-
 	minMountains: 0,
-
 	maxMountains: 10,
-
 	minValleys: 0,
-
 	maxValleys: 10
 };
 
