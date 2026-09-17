@@ -112,7 +112,7 @@ h1 {
 	font-weight: 550; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
-	margin: 0 0 0 0;
+	margin: 0 0 8px 0;
 }
 
 .h1org { 
@@ -135,7 +135,7 @@ h3 {
 	font-weight: 300; 
 	font-family: 'Aptos', sans-serif; 
 	color: #F2F2F2;
-	margin: 0 0 0 0;
+	margin: 0 0 8px 0;
 }
 	
 f1 { 
