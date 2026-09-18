@@ -626,33 +626,33 @@ f1 {
 }
 	
 /* ===================== IMAGE WINDOWS ===================== */	
-.teamimg-c34r24 {
+.teamimg-c34r234 {
 	z-index: 18;
 	display: grid;
 	grid-column: 3 / span 2;
-	grid-row: 2 / span 4;
+	grid-row: 2 / span 3;
 	width: 100%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 0%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
 	overflow: hidden;
 }
-.teamimg-c67r24 {
+.teamimg-c67r234 {
 	z-index: 18;
 	display: grid;
 	grid-column: 6 / span 2;
-	grid-row: 2 / span 4;
+	grid-row: 2 / span 3;
 	width: 100%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 0%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
 	overflow: hidden;
 }	
-.teamimg-c910r24 {
+.teamimg-c910r234 {
 	z-index: 18;
 	display: grid;
 	grid-column: 9 / span 2;
-	grid-row: 2 / span 4;
+	grid-row: 2 / span 3;
 	width: 100%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 0%,rgb(93, 213, 255,1) 100%);
