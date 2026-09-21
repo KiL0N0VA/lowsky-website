@@ -935,8 +935,7 @@ t1 {
 	gap: 24px;
 	width: 530px;
 	max-width: 100%;
-
-	background: transparent;
+	background: rgba(2,24,30,0.50);
 }
 .topo-card {
 	box-sizing: border-box;
