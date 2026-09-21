@@ -108,143 +108,93 @@
 		</div>
 		
 		<div class="Map-c8310r469">
-			<div id="terrain-controls">
 
-    <label>
-        Latitude
-        <input
-            id="latitude"
-            type="number"
-            step="0.000001"
-            value="51.178400"
-        >
-    </label>
-
-    <label>
-        Longitude
-        <input
-            id="longitude"
-            type="number"
-            step="0.000001"
-            value="-115.570800"
-        >
-    </label>
-
-    <label>
-        Area (km)
-        <input
-            id="areaKM"
-            type="number"
-            step="1"
-            min="1"
-            max="100"
-            value="10"
-        >
-    </label>
-
-    <label>
-        Terrain Resolution
-        <input
-            id="terrainResolution"
-            type="number"
-            min="32"
-            max="512"
-            value="128"
-        >
-    </label>
-
-
-    <h3>START</h3>
-
-    <label>
-        Start X
-        <input
-            id="startX"
-            type="number"
-            value="50"
-        >
-    </label>
-
-    <label>
-        Start Z
-        <input
-            id="startZ"
-            type="number"
-            value="92"
-        >
-    </label>
-
-
-    <h3>DESTINATION</h3>
-
-    <label>
-        End X
-        <input
-            id="endX"
-            type="number"
-            value="58"
-        >
-    </label>
-
-    <label>
-        End Z
-        <input
-            id="endZ"
-            type="number"
-            value="8"
-        >
-    </label>
-
-
-    <h3>PATHFINDING</h3>
-
-    <label>
-        Slope Weight
-        <input
-            id="slopeWeight"
-            type="number"
-            step="1"
-            value="18"
-        >
-    </label>
-
-    <label>
-        Uphill Weight
-        <input
-            id="uphillWeight"
-            type="number"
-            step="0.1"
-            value="1.8"
-        >
-    </label>
-
-    <label>
-        Maximum Slope
-        <input
-            id="maximumSlope"
-            type="number"
-            step="0.01"
-            value="0.55"
-        >
-    </label>
-
-
-    <button id="generateTerrain">
-        GENERATE ROUTE
-    </button>
-
-</div>
-
-
-<div id="terrain-container"></div>
-
-
-<script
-    type="module"
-    src="./js/three.js">
-</script>
+			<!-- MAP LOCATION ========================================================================================================================================= -->
+			<div class="topo-heading">
+				<div class="topo-icon-map">✥</div>
+					<div>
+						<h2>MAP LOCATION</h2>
+						<p>Define the geographic area to load</p>
+					</div>
+			</div>
+			<div class="topo-controls">
+				<div class="topo-row">
+					<label for="latitude">Latitude:</label>
+					<div class="topo-input">
+						<input id="latitude" type="number" value="51.0000" step="0.0001">
+						<span>°</span>
+					</div>
+				</div>
+				<div class="topo-row">
+					<label for="longitude">Longitude:</label>
+					<div class="topo-input">
+						<input id="longitude" type="number" value="-151.0000" step="0.0001">
+						<span>°</span>
+					</div>
+				</div>				
+				<div class="topo-row">
+					<label for="areaKM">Square Area:</label>
+					<div class="topo-input">
+						<input id="areaKM" type="number" value="10" step="1">
+						<span>km</span>
+					</div>
+				</div>	
+				<div class="topo-row">
+					<label for="resolution">Resolution</label>
+					<div class="topo-input">
+						<input id="resolution" type="number" value="128" step="1">
+						<span>px</span>
+					</div>
+				</div>
+			</div>
+			<!-- COORDINATES ========================================================================================================================================= -->
+			<div class="topo-heading">
+				<div class="topo-icon-position">⊙</div>
+					<div>
+						<h2>COORDINATES</h2>
+						<p>Set the current position</p>
+					</div>
+			</div>
+			<div class="topo-controls">
+				<div class="topo-row">
+					<label for="positionX">Position X:</label>
+					<div class="topo-input">
+						<input id="positionX" type="number" value="0.0" step="0.1">
+						<span>m</span>
+					</div>
+				</div>
+				<div class="topo-row">
+					<label for="positionY">Position Y:</label>
+					<div class="topo-input">
+						<input id="positionY" type="number" value="0.0" step="0.1">
+						<span>m</span>
+					</div>
+				</div>			
+			<!-- DESTINATION ========================================================================================================================================= -->
+			<div class="topo-heading">
+				<div class="topo-icon-position">⚑</div>
+					<div>
+						<h2>DESTINATION</h2>
+						<p>Set the target destination</p>
+					</div>
+			</div>
+			<div class="topo-controls">
+				<div class="topo-row">
+					<label for="destinationX">Destination X:</label>
+					<div class="topo-input">
+						<input id="destinationX" type="number" value="0.0" step="0.1">
+						<span>m</span>
+					</div>
+				</div>
+				<div class="topo-row">
+					<label for="destinationY">Destination Y:</label>
+					<div class="topo-input">
+						<input id="destinationY" type="number" value="0.0" step="0.1">
+						<span>m</span>
+					</div>
+				</div>
+			</div>
 		</div>
-	
     </main>
 	
 <!-- ========================================================================================================================================================================================= -->	
