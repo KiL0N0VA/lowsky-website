@@ -927,6 +927,260 @@ t1 {
 	cursor: pointer;
 }
 */
+/* ================================================= TOPOGRAPHIC ================================================= */
+
+.topographic-settings {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	width: 530px;
+	max-width: 100%;
+
+	background: transparent;
+}
+.topo-card {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px 20px 20px 20px;
+	border: 0px solid rgba(80,135,150,0.65);
+	border-radius: 15px;
+	background: rgba(2,24,30,0.82);
+	box-shadow:
+		inset 0 0 30px rgba(0,0,0,0.22),
+		0 4px 12px rgba(0,0,0,0.18);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+
+	font-family: "Exo 2","Aptos",Arial,Sans-serif;
+	color: #D8EDF4;
+}
+.topo-heading {
+	display: grid;
+	grid-template-columns: 64px 1fr;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.topo-heading h2 {
+	margin: 0;
+	font-size: 27px;
+	font-weight: 400;
+	letter-spacing: 0;
+	color: #f1f8fa;
+}
+.topo-heading p {
+	margin: 5px 0 0 0;
+	font-size: 18px;
+	font-weight: 400;
+	color: #668fa0;
+}	
+/* ============================================================================================== */
+/* ICONS                                                                                          */
+/* ============================================================================================== */
+
+.topo-icon {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	width: 55px;
+	height: 55px;
+
+	font-size: 48px;
+	line-height: 1;
+}
+
+
+.icon-map {
+	color: #00d5ff;
+}
+
+
+.icon-position {
+	color: #ff6800;
+}
+
+
+.icon-destination {
+	color: #ff6800;
+}
+
+
+/* ============================================================================================== */
+/* CONTROL AREA                                                                                   */
+/* ============================================================================================== */
+
+.topo-controls {
+	display: flex;
+	flex-direction: column;
+
+	gap: 8px;
+}
+
+
+/* ============================================================================================== */
+/* INDIVIDUAL ROW                                                                                 */
+/* ============================================================================================== */
+
+.topo-row {
+	display: grid;
+
+	grid-template-columns:
+		190px
+		1fr;
+
+	align-items: center;
+
+	min-height: 51px;
+}
+
+
+.topo-row label {
+	font-size: 20px;
+	font-weight: 400;
+
+	color: #a9cfdb;
+}
+
+
+/* ============================================================================================== */
+/* INPUT + UNIT                                                                                   */
+/* ============================================================================================== */
+
+.topo-input {
+	display: grid;
+
+	grid-template-columns:
+		minmax(0, 200px)
+		45px;
+
+	align-items: center;
+
+	gap: 18px;
+}
+
+
+.topo-input input {
+	box-sizing: border-box;
+
+	width: 100%;
+	height: 48px;
+
+	padding: 0 15px;
+
+	border: 1px solid #416d7d;
+	border-radius: 6px;
+
+	outline: none;
+
+	background: rgba(2, 24, 31, 0.88);
+
+	color: #d8edf4;
+
+	font-family: inherit;
+	font-size: 19px;
+
+	box-shadow:
+		inset 0 0 10px rgba(0, 0, 0, 0.25);
+
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease,
+		background 0.2s ease;
+}
+
+
+.topo-input input:hover {
+	border-color: #5c93a5;
+}
+
+
+.topo-input input:focus {
+	border-color: #00d5ff;
+
+	background: rgba(3, 31, 40, 0.95);
+
+	box-shadow:
+		0 0 0 1px rgba(0, 213, 255, 0.20),
+		0 0 10px rgba(0, 213, 255, 0.10);
+}
+
+
+.topo-input span {
+	font-size: 19px;
+
+	color: #a9cfdb;
+}
+
+
+/* ============================================================================================== */
+/* NUMBER INPUT SPINNERS                                                                          */
+/* ============================================================================================== */
+
+.topo-input input[type="number"] {
+	color-scheme: dark;
+}
+
+
+/* ============================================================================================== */
+/* RESPONSIVE                                                                                     */
+/* ============================================================================================== */
+
+@media (max-width: 600px) {
+
+	.topographic-settings {
+		width: 100%;
+		gap: 16px;
+	}
+
+
+	.topo-card {
+		padding: 16px 18px 20px 18px;
+		border-radius: 15px;
+	}
+
+
+	.topo-heading {
+		grid-template-columns: 55px 1fr;
+	}
+
+
+	.topo-heading h2 {
+		font-size: 22px;
+	}
+
+
+	.topo-heading p {
+		font-size: 15px;
+	}
+
+
+	.topo-row {
+		grid-template-columns: 150px 1fr;
+	}
+
+
+	.topo-row label {
+		font-size: 17px;
+	}
+
+
+	.topo-input {
+		grid-template-columns: 1fr 32px;
+		gap: 8px;
+	}
+
+
+	.topo-input input {
+		height: 42px;
+		font-size: 16px;
+	}
+
+
+	.topo-input span {
+		font-size: 16px;
+	}
+
+}	
 #terrain-container {
 	position: relative;
 	width: 100%;
