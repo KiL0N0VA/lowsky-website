@@ -64,7 +64,7 @@ resize();
 // OVERALL VOLUMETRIC SIZE OF GLOBE
 const radius = 100;
 // BELTS RUN AROUND THE LATITUDE (how FAT-itude are the rungs, FATTEST @ ZERO)
-const rings = 15;
+const rings = 25;
 // STRAPS RUN AROUND THE LONGITUDE (how LONG straps are from south hemi to north hemi, LONGEST @ 180)
 const segments = 30;
 
@@ -98,7 +98,7 @@ function project(point) {
     const s = Math.sin(angle);
 
     // Automatically fit mesh inside container
-    const fitScale = Math.min(w, h) / 400;
+    const fitScale = Math.min(w, h) / 800;
 
     // Rotate around Y axis
     const x =
@@ -118,15 +118,8 @@ function project(point) {
         x: cx + x * perspective,
         y: cy + y * perspective,
 
-        size: Math.max(
-            1,
-            perspective * 3 * fitScale
-        ),
-
-        alpha: Math.min(
-            1,
-            Math.max(0.15, perspective)
-        )
+        size: Math.max(1,perspective * 3 * fitScale),
+        alpha: Math.min(1,Math.max(0.15, perspective))
     };
 }
 
@@ -152,13 +145,7 @@ function draw() {
 
         ctx.beginPath();
 
-        ctx.arc(
-            star.x,
-            star.y,
-            star.r,
-            0,
-            Math.PI * 2
-        );
+        ctx.arc(star.x,star.y,star.r,0,Math.PI * 2);
 
         ctx.fill();
     });
@@ -178,13 +165,7 @@ function draw() {
 
         ctx.fillStyle = "white";
 
-        ctx.arc(
-            p.x,
-            p.y,
-            p.size,
-            0,
-            Math.PI * 2
-        );
+        ctx.arc(p.x,p.y,p.size,0,Math.PI * 2);
 
         ctx.fill();
     });
@@ -195,7 +176,7 @@ function draw() {
 
 
     // Rotation speed
-    angle += 0.004;
+    angle += 0.010;
 
 
     requestAnimationFrame(draw);
