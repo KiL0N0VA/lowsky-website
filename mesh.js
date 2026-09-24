@@ -98,17 +98,14 @@ function project(point) {
     const s = Math.sin(angle);
 
     // Automatically fit mesh inside container
-    const fitScale = Math.min(w, h) / 800;
+    const fitScale = Math.min(w, h) / 100;
 
     // Rotate around Y axis
-    const x =
-        (point.x * c - point.z * s) * fitScale;
+    const x = (point.x * c - point.z * s) * fitScale;
 
-    const z =
-        (point.x * s + point.z * c) * fitScale;
+    const z = (point.x * s + point.z * c) * fitScale;
 
-    const y =
-        point.y * fitScale;
+    const y = point.y * fitScale;
 
     // Perspective
     const depth = 450;
@@ -132,21 +129,15 @@ function project(point) {
 function draw() {
 
     ctx.clearRect(0, 0, w, h);
-
-
     // ----------------------------------------------
     // BACKGROUND STARS
     // ----------------------------------------------
-
     ctx.globalAlpha = 1;
     ctx.fillStyle = "rgba(255,255,255,0.25)";
 
     stars.forEach(star => {
-
         ctx.beginPath();
-
         ctx.arc(star.x,star.y,star.r,0,Math.PI * 2);
-
         ctx.fill();
     });
 
@@ -158,13 +149,9 @@ function draw() {
     points.forEach(point => {
 
         const p = project(point);
-
         ctx.globalAlpha = p.alpha;
-
         ctx.beginPath();
-
         ctx.fillStyle = "white";
-
         ctx.arc(p.x,p.y,p.size,0,Math.PI * 2);
 
         ctx.fill();
@@ -172,11 +159,11 @@ function draw() {
 
 
     // Reset opacity
-    ctx.globalAlpha = 1;
+    ctx.globalAlpha = 0.85;
 
 
     // Rotation speed
-    angle += 0.010;
+    angle += 0.002;
 
 
     requestAnimationFrame(draw);
