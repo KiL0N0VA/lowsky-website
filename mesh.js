@@ -62,11 +62,11 @@ resize();
 // ==================================================
 
 // OVERALL VOLUMETRIC SIZE OF GLOBE
-const radius = 100;
-// BELTS RUN AROUND THE LATITUDE (how FAT-itude are the rungs, FATTEST @ ZERO)
-const rings = 25;
-// STRAPS RUN AROUND THE LONGITUDE (how LONG straps are from south hemi to north hemi, LONGEST @ 180)
-const segments = 30;
+const radius = 60;
+// BELTS RUN AROUND THE LATITUDE (IRL how FAT-itude are the rungs, FATTEST @ ZERO)
+const rings = 15;
+// STRAPS RUN AROUND THE LONGITUDE (IRL how LONG straps are from south hemi to north hemi, LONGEST @ 180)
+const segments = 20;
 
 const points = [];
 
@@ -107,8 +107,8 @@ function project(point) {
 
     const y = point.y * fitScale;
 
-    // Perspective
-    const depth = 450;
+    // Perspective - HOW FAR INTO THE SPHERE IS THE CAMERA POSITION
+    const depth = 800;
     const perspective = depth / (depth + z);
 
     return {
