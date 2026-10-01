@@ -635,7 +635,40 @@ t1 {
 	border: 2px solid #5DD5FF;
 	overflow: hidden;
 }
-	
+.prd-c324r538 {
+	z-index: 18;
+	display: grid;
+	grid-column: 3 / span 2;
+	grid-row: 5 / span 3;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #5DD5FF;
+	overflow: hidden;
+}
+.prd-c627r538 {
+	z-index: 18;
+	display: grid;
+	grid-column: 6 / span 2;
+	grid-row: 5 / span 3;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #5DD5FF;
+	overflow: hidden;
+}
+.prd-c829r538 {
+	z-index: 18;
+	display: grid;
+	grid-column: 8 / span 2;
+	grid-row: 5 / span 3;
+
+	width: 100%;
+    height: 100%;
+	border: 2px solid #5DD5FF;
+	overflow: hidden;
+}
+		
 /* ===================== IMAGE WINDOWS ===================== */	
 .teamimg-c34r234 {
 	z-index: 18;
