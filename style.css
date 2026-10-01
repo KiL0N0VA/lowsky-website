@@ -100,11 +100,11 @@ body {
 	background: #000000;
 }
 .page-index { --page-rows:8;}
-.page-operations { --page-rows:12;}
-.page-wardens { --page-rows:12;}
-.page-simulations { --page-rows:10;}
-.page-kernels { --page-rows:9;}
-.page-yottabytes { --page-rows:18;}
+.page-operations { --page-rows:8;}
+.page-wardens { --page-rows:9;}
+.page-simulations { --page-rows:7;}
+.page-kernels { --page-rows:13;}
+.page-yottabytes { --page-rows:8;}
 	
 /* ===================== HEADERS ===================== */
 p {
