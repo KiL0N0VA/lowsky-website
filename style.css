@@ -378,7 +378,7 @@ t1 {
 .sidebarright {
 	z-index: 18;
 	display: grid;
-	grid-column: 12 / span 1;
+	grid-column: 11 / span 2;
 	grid-row: 1 / span 8;
 	border: 0px solid #00FF00;
 	background: none;
