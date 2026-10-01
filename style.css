@@ -741,7 +741,8 @@ t1 {
 	box-shadow: 0 12px 35px rgba(0,0,0,0.45)
 	overflow: hidden;
 }	
-/* ===================== KERNELS - TEAM STRUCTURE ===================== */	
+/* ===================================================================================================================================================== */	
+/* ===================== WARDEN - TEAM STRUCTURE ===================== */	
 .teamimg-c324r334 {
 	z-index: 18;
 	display: grid;
@@ -751,7 +752,7 @@ t1 {
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
-	margin: 0 10px 0 10px;
+	margin: 0 -20px 0 -20px;
 	box-shadow: 0 12px 35px rgba(0,0,0,0.45)
 	overflow: hidden;
 }
@@ -764,7 +765,7 @@ t1 {
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 10%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
-	margin: 0 10px 0 10px;
+	margin: 0 -20px 0 -20px;
 	box-shadow: 0 12px 35px rgba(0,0,0,0.45)
 	overflow: hidden;
 }	
@@ -777,7 +778,7 @@ t1 {
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 15%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
-	margin: 0 10px 0 10px;
+	margin: 0 -20px 0 -20px;
 	box-shadow: 0 12px 35px rgba(0,0,0,0.45)
 	overflow: hidden;
 }
@@ -790,7 +791,7 @@ t1 {
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 15%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
-	margin: 0 10px 0 10px;
+	margin: 0 -20px 0 -20px;
 	box-shadow: 0 12px 35px rgba(0,0,0,0.45)
 	overflow: hidden;
 }			
