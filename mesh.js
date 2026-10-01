@@ -98,7 +98,7 @@ function project(point) {
     const s = Math.sin(angle);
 
     // Automatically fit mesh inside container
-    const fitScale = Math.min(w, h) / 100;
+    const fitScale = Math.min(w, h) / 800;
 
     // Rotate around Y axis
     const x = (point.x * c - point.z * s) * fitScale;
