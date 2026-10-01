@@ -144,12 +144,12 @@ h3 {
 	font-style: normal; 
 	font-weight: 300; 
 	font-family: 'Aptos', sans-serif; 
-	color: #F2F2F2;
+	color: #525252;
 	transition: color 0.2s ease;
 	margin: 0 0 8px 0;
 }
 h3:hover {
-	color: #000000;
+	color: #CCCCCC;
 }
 	
 f1 { 
