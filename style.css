@@ -107,9 +107,9 @@ p {
 }
 
 h1 { 
-	font-size: clamp(24px, 1.1vw, 28px);
+	font-size: clamp(24px, 1.2vw, 40px);
 	font-style: normal; 
-	font-weight: 550; 
+	font-weight: 600; 
 	font-family: 'Aptos', sans-serif; 
 	color: #FFFFFF;
 	margin: 0 0 8px 0;
@@ -130,7 +130,7 @@ h2 {
 }
 	
 h3 { 
-	font-size: clamp(22px, 1.1vw, 26px);
+	font-size: clamp(22px, 1.2vw, 36px);
 	font-style: normal; 
 	font-weight: 300; 
 	font-family: 'Aptos', sans-serif; 
