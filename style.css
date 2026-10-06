@@ -736,7 +736,7 @@ sh1 {
 .teamimg-c324r334 {
 	z-index: 18;
 	display: grid;
-	grid-column: 3 / span 2;
+	grid-column: 3 / span 4;
 	grid-row: 2 / span 3;
 	width: 90%;
     height: 100%;
@@ -750,7 +750,7 @@ sh1 {
 .teamimg-c526r334 {
 	z-index: 18;
 	display: grid;
-	grid-column: 7 / span 2;
+	grid-column: 7 / span 4;
 	grid-row: 2 / span 3;
 	width: 90%;
     height: 100%;
@@ -764,9 +764,9 @@ sh1 {
 .teamimg-c728r334 {
 	z-index: 18;
 	display: grid;
-	grid-column: 3 / span 2;
+	grid-column: 3 / span 4;
 	grid-row: 6 / span 3;
-	width: 80%;
+	width: 90%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 15%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
@@ -778,9 +778,9 @@ sh1 {
 .teamimg-c9210r334 {
 	z-index: 18;
 	display: grid;
-	grid-column: 7 / span 2;
+	grid-column: 7 / span 4;
 	grid-row: 6 / span 3;
-	width: 80%;
+	width: 90%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 15%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
