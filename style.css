@@ -733,7 +733,7 @@ sh1 {
 	display: grid;
 	grid-column: 3 / span 2;
 	grid-row: 3 / span 3;
-	width: 100%;
+	width: 80%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
@@ -747,7 +747,7 @@ sh1 {
 	display: grid;
 	grid-column: 5 / span 2;
 	grid-row: 3 / span 3;
-	width: 100%;
+	width: 80%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 10%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
@@ -761,7 +761,7 @@ sh1 {
 	display: grid;
 	grid-column: 7 / span 2;
 	grid-row: 3 / span 3;
-	width: 100%;
+	width: 80%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 15%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
@@ -775,7 +775,7 @@ sh1 {
 	display: grid;
 	grid-column: 9 / span 2;
 	grid-row: 3 / span 3;
-	width: 100%;
+	width: 80%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 15%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
