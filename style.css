@@ -676,10 +676,10 @@ sh1 {
 .prd-c324r436 {
 	z-index: 12;
 	display: grid;
-	grid-column: 3 / span 2;
+	grid-column: 3 / span 3;
 	grid-row: 4 / span 3;
 
-	width: 100%;
+	width: 90%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
@@ -690,10 +690,10 @@ sh1 {
 .prd-c627r436 {
 	z-index: 12;
 	display: grid;
-	grid-column: 6 / span 2;
+	grid-column: 6 / span 3;
 	grid-row: 4 / span 3;
 
-	width: 100%;
+	width: 90%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
@@ -704,10 +704,10 @@ sh1 {
 .prd-c9210r436 {
 	z-index: 12;
 	display: grid;
-	grid-column: 9 / span 2;
+	grid-column: 9 / span 3;
 	grid-row: 4 / span 3;
 
-	width: 100%;
+	width: 90%;
     height: 100%;
 	background: linear-gradient(to bottom, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
