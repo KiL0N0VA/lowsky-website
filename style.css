@@ -636,6 +636,7 @@ sh1 {
     height: 100%;
 	background: linear-gradient(to left, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
+	margin: 10px 0 0 10px;
 	overflow: auto;
 }
 .cont-c335r526 {
@@ -648,6 +649,7 @@ sh1 {
     height: 100%;
 	background: linear-gradient(to left, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);	
 	border: 0px solid #5DD5FF;
+	margin: 10px 0 0 10px;
 	overflow: auto;
 }
 .cont-c335r728 {
@@ -660,6 +662,7 @@ sh1 {
     height: 100%;
 	background: linear-gradient(to left, rgb(93, 213, 255,0) 5%,rgb(93, 213, 255,1) 100%);
 	border: 0px solid #5DD5FF;
+	margin: 10px 0 0 10px;
 	overflow: auto;
 }
 /* ===================== FRAME-GRID =====================
