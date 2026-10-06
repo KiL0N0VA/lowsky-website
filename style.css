@@ -630,7 +630,7 @@ sh1 {
 	z-index: 18;
 	display: grid;
 	grid-column: 3 / span 3;
-	grid-row: 4 / span 1;
+	grid-row: 3 / span 1;
 
 	width: 90%;
     height: 100%;
@@ -643,7 +643,7 @@ sh1 {
 	z-index: 18;
 	display: grid;
 	grid-column: 6 / span 3;
-	grid-row: 4 / span 1;
+	grid-row: 3 / span 1;
 
 	width: 90%;
     height: 100%;
@@ -656,7 +656,7 @@ sh1 {
 	z-index: 18;
 	display: grid;
 	grid-column: 9 / span 3;
-	grid-row: 4 / span 1;
+	grid-row: 3 / span 1;
 
 	width: 90%;
     height: 100%;
