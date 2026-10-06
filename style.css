@@ -69,6 +69,8 @@
 	absolute = 
 	relative = 
 
+	overflow: auto, clip, scroll, hidden, visible, 
+
 COLORS:
 	FFFFFF = White
 	808080 = Gray, Mid
