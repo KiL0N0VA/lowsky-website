@@ -95,7 +95,7 @@ COLORS:
 
 /* ===================================================================== PAGE FOUNDATION ===================================================================== */
 body {
-    min-height: 100vh;
+    min-height: 80vh;
 	margin: 0;
     overflow-x: hidden;
 	overflow-y: auto;
